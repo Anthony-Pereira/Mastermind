@@ -8,7 +8,7 @@ import java.util.Properties;
 public class Mastermind {
 
      private boolean systemMode = false;
-     private boolean responseIsGood = true;
+     public boolean responseIsGood = true;
 
      private  int mode;
      private  int game;
@@ -43,9 +43,9 @@ public class Mastermind {
          return this.systemMode;
      }
 
-     public String randomNumber(int mode, int numberCase) {
+     public String randomNumber(int numberCase) {
 
-         this.mode = mode;
+         //this.mode = mode;
          this.numberCase = numberCase;
 
          this.minimumNumber = (int) Math.pow(10, this.numberCase -1);
@@ -157,10 +157,11 @@ public class Mastermind {
              if (this.parameter1.charAt(i) < this.parameter2.charAt(i)) {
                  arrayClue[i] = '+';
                  arrayNumberWellPositioned[i] = 0;
-                 this.parameter1.compareTo(this.parameter2);
+                 //Integer.valueOf(this.computerNumber.charAt(i)) ++;
              } else if (this.parameter1.charAt(i) > this.parameter2.charAt(i)) {
                  arrayClue[i] = '-';
                  arrayNumberWellPositioned[i] = 0;
+                 //Integer.valueOf(this.computerNumber.charAt(i)) --;
              } else {
                  arrayClue[i] = '=';
                  arrayNumberWellPositioned[i] = 1;
@@ -189,6 +190,43 @@ public class Mastermind {
          System.out.println("clue : " + this.arrayClue);
          System.out.println( "number well positioned : " + this.numberWellPositioned);
          System.out.println("number present : " + this.numberPresent);
+
+
+         /*Game.extentionComputerNumberThousand = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(0)));
+         Game.extentionComputerNumberHundreed = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(1)));
+         Game.extentionComputerNumberDecade = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(2)));
+         Game.extentionComputerNumberUnit = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(3)));
+
+         Game.extensionQuanticNumberThousand = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(0)));
+         Game.extensionQuanticNumberHundreed = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(1)));
+         Game.extensionQuanticNumberDecade = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(2)));
+         Game.extensionQuanticNumberUnit = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(3)));
+
+         if (Game.extentionComputerNumberThousand < Game.extensionQuanticNumberThousand) {
+             Game.extentionComputerNumberThousand ++;
+         } else if (Game.extentionComputerNumberThousand > Game.extensionQuanticNumberThousand) {
+             Game.extentionComputerNumberThousand --;
+         }
+
+         if (Game.extentionComputerNumberHundreed < Game.extensionQuanticNumberHundreed) {
+             Game.extentionComputerNumberHundreed ++;
+         } else if (Game.extentionComputerNumberHundreed > Game.extensionQuanticNumberHundreed) {
+             Game.extentionComputerNumberHundreed --;
+         }
+
+         if (Game.extentionComputerNumberDecade < Game.extensionQuanticNumberDecade) {
+             Game.extentionComputerNumberDecade ++;
+         } else if (Game.extentionComputerNumberDecade > Game.extensionQuanticNumberDecade) {
+             Game.extentionComputerNumberDecade --;
+         }
+
+         if (Game.extentionComputerNumberUnit < Game.extensionQuanticNumberUnit) {
+             Game.extentionComputerNumberUnit ++;
+         } else if (Game.extentionComputerNumberUnit > Game.extensionQuanticNumberUnit) {
+             Game.extentionComputerNumberUnit --;
+         }*/
+
+         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      }
 
      public void dialogue (int mode, String parameter1, String parameter2) {

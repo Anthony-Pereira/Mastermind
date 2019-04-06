@@ -3,8 +3,8 @@ package com.company;
 import jdk.nashorn.internal.parser.Scanner;
 
 public class Configuration  {
-
-    /*public String compare() {
+/*
+    public String compare() {
 
         this.computerNumber.charAt(0);
         this.computerNumber.charAt(1);
@@ -193,14 +193,14 @@ public class Configuration  {
         this.numberPresent = this.numberPresentThousand + this.numberPresentHundreed + this.numberPresentDecade + this.numberPresentUnit;
 
         return this.computerNumber;
-    }*/
+    }
 
 
     //////////////////////////////////////////////////////////////
         //CLASS ENIGMA
     /////////////////////////////////////////////////////////////////////////
 
-    /*
+
 
     public GameEnigma(){}
 

@@ -29,7 +29,8 @@ public class Mastermind {
      private String dialogueReturn = "error";
      private String playerNumber="???";
      private String computerNumber;
-     private String quanticNumber;
+     private String refereeNumber;
+     private String answer;
      private String parameter1;
      private String parameter2;
      private String entity;
@@ -45,7 +46,6 @@ public class Mastermind {
 
      public String randomNumber(int numberCase) {
 
-         //this.mode = mode;
          this.numberCase = numberCase;
 
          this.minimumNumber = (int) Math.pow(10, this.numberCase -1);
@@ -55,8 +55,6 @@ public class Mastermind {
          System.out.println(this.maximumNumber);
 
          this.randomNumber = this.minimumNumber + (int) (Math.random() * (this.maximumNumber - this.minimumNumber + 1));
-
-         System.out.println(this.randomNumber);
 
          return Integer.toString(randomNumber);
      }
@@ -109,12 +107,13 @@ public class Mastermind {
          return this.mode;
      }
 
-     public String showRresult (int menu,int mode){
+     public String showRresult (int menu,int mode, String answer){
 
          this.menu = menu;
          this.mode = mode;
+         this.answer = answer;
 
-         if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", this.computerNumber));
+         if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
 
              do {
                  try {
@@ -130,41 +129,52 @@ public class Mastermind {
          return this.playerNumber;
      }
 
-     public void logic (int mode,int numberCase, String parameter1, String parameter2){
+     public void logic (int mode,int numberCase, String parameter1, String parameter2) throws IOException {
+
+         Properties p = new Properties();
+         InputStream is = new FileInputStream("src/com/resources/Config.properties");
+         p.load(is);
 
          this.mode = mode;
          this.numberCase = numberCase;
          this.parameter1 = parameter1;
          this.parameter2 = parameter2;
 
-         char[] arrayClue = new char[this.numberCase];
-         int[] cases = new int[this.numberCase];
-         int[] arrayNumberWellPositioned = new int[this.numberCase];
+         char[] arrayClue = new char[Integer.parseInt(p.getProperty("numberCase"))];
+         int[] cases = new int[Integer.parseInt(p.getProperty("numberCase"))];
+         int[] arrayNumberWellPositioned = new int[Integer.parseInt(p.getProperty("numberCase"))];
+         int[] arrayIndex = new int[Integer.parseInt(p.getProperty("numberCase"))];
+
          ArrayList al = new ArrayList();
 
+         this.computerNumber = "";
          this.arrayClue = "";
          this.numberWellPositioned = 0;
          this.numberPresent = 0;
 
-         for (int i=0;i<this.numberCase;i++) {
+         for (int i=0;i<Integer.parseInt(p.getProperty("numberCase"));i++) {
 
-             al.add(this.parameter1.charAt(i));
-             al.add(this.parameter2.charAt(i));
-             al.add(arrayClue);
-             al.add(arrayNumberWellPositioned);
+             //al.add(this.parameter1.charAt(i));
+             //al.add(this.parameter2.charAt(i));
+             /*al.add(arrayClue);
              al.add(cases);
+             al.add(arrayNumberWellPositioned);
+             al.add(arrayIndex);*/
 
              if (this.parameter1.charAt(i) < this.parameter2.charAt(i)) {
                  arrayClue[i] = '+';
                  arrayNumberWellPositioned[i] = 0;
-                 //Integer.valueOf(this.computerNumber.charAt(i)) ++;
+                 arrayIndex[i] = Character.getNumericValue(this.parameter1.charAt(i)) ;
+                 arrayIndex[i]++;
              } else if (this.parameter1.charAt(i) > this.parameter2.charAt(i)) {
                  arrayClue[i] = '-';
                  arrayNumberWellPositioned[i] = 0;
-                 //Integer.valueOf(this.computerNumber.charAt(i)) --;
-             } else {
+                 arrayIndex[i] = Character.getNumericValue(this.parameter1.charAt(i));
+                 arrayIndex[i]--;
+             }   else {
                  arrayClue[i] = '=';
                  arrayNumberWellPositioned[i] = 1;
+                 arrayIndex[i] = Character.getNumericValue(this.parameter1.charAt(i));
              }
 
              cases[i] = this.parameter2.indexOf(this.parameter1.charAt(i));
@@ -173,8 +183,10 @@ public class Mastermind {
              } else if (cases[i] != -1) {
                  cases[i] = 1;
              }
-             System.out.println("parameter 2 : " + this.parameter2);
-             System.out.println(String.format("parameter 1 : %s number %s", this.parameter1,this.parameter1.charAt(i)));
+             this.computerNumber+=Integer.toString(arrayIndex[i]);
+             System.out.println(String.format("parameter 1: %s", this.parameter1));
+             System.out.println(String.format("parameter 2: %s", this.parameter2));
+             System.out.println(String.format("Le nombre de la colonne %s est: %s et deviens %s .",i,parameter1.charAt(i),arrayIndex[i]));
          }
 
          for (char total : arrayClue) {
@@ -184,69 +196,36 @@ public class Mastermind {
          for(int total : arrayNumberWellPositioned) {
              this.numberWellPositioned += total;
          }
+
          for(int total : cases) {
              this.numberPresent += total;
+         }
+
+         for (int total: arrayIndex) {
+             this.parameter1 += total;
          }
          System.out.println("clue : " + this.arrayClue);
          System.out.println( "number well positioned : " + this.numberWellPositioned);
          System.out.println("number present : " + this.numberPresent);
-
-
-         /*Game.extentionComputerNumberThousand = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(0)));
-         Game.extentionComputerNumberHundreed = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(1)));
-         Game.extentionComputerNumberDecade = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(2)));
-         Game.extentionComputerNumberUnit = Integer.parseInt(String.valueOf(Game.computerNumber.charAt(3)));
-
-         Game.extensionQuanticNumberThousand = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(0)));
-         Game.extensionQuanticNumberHundreed = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(1)));
-         Game.extensionQuanticNumberDecade = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(2)));
-         Game.extensionQuanticNumberUnit = Integer.parseInt(String.valueOf(Game.quanticNumber.charAt(3)));
-
-         if (Game.extentionComputerNumberThousand < Game.extensionQuanticNumberThousand) {
-             Game.extentionComputerNumberThousand ++;
-         } else if (Game.extentionComputerNumberThousand > Game.extensionQuanticNumberThousand) {
-             Game.extentionComputerNumberThousand --;
-         }
-
-         if (Game.extentionComputerNumberHundreed < Game.extensionQuanticNumberHundreed) {
-             Game.extentionComputerNumberHundreed ++;
-         } else if (Game.extentionComputerNumberHundreed > Game.extensionQuanticNumberHundreed) {
-             Game.extentionComputerNumberHundreed --;
-         }
-
-         if (Game.extentionComputerNumberDecade < Game.extensionQuanticNumberDecade) {
-             Game.extentionComputerNumberDecade ++;
-         } else if (Game.extentionComputerNumberDecade > Game.extensionQuanticNumberDecade) {
-             Game.extentionComputerNumberDecade --;
-         }
-
-         if (Game.extentionComputerNumberUnit < Game.extensionQuanticNumberUnit) {
-             Game.extentionComputerNumberUnit ++;
-         } else if (Game.extentionComputerNumberUnit > Game.extensionQuanticNumberUnit) {
-             Game.extentionComputerNumberUnit --;
-         }*/
-
-         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      }
 
-     public void dialogue (int mode, String parameter1, String parameter2) {
+     public void dialogue (int mode, String parameter1, String parameter2, String name) {
 
          this.mode = mode;
          this.parameter1 = parameter1;
          this.parameter2 = parameter2;
-
-         System.out.println("param 1 = " + this.parameter1);
-         System.out.println("param 2 = " + this.parameter2);
+         this.name = name;
 
          if (this.parameter1.equals(this.parameter2)) {
-             JOptionPane.showMessageDialog(null, String.format("\nREFEREE: CONGRATULATION %s WIN !\n", this.entity));
+             JOptionPane.showMessageDialog(null, String.format("\nREFEREE: CONGRATULATION %s WIN !\n", this.name.toUpperCase()));
              Integer.toString(this.chance = 0);
          } else if (this.chance == 0) {
-             JOptionPane.showMessageDialog(null,String.format("\nREFEREE: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: %s\nYOU LOOSE\n", this.computerNumber));
+             JOptionPane.showMessageDialog(null,String.format("\nREFEREE: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: %s\nYOU LOOSE\n", this.parameter1));
              if (this.menu == 3) { String.format("REFEREE WIN"); }
          }else {
              JOptionPane.showMessageDialog(null,String.format("\nREFEREE: WRONG ANSWERS\n"));
              this.chance--;
+             System.out.println(String.format("chance: %s",this.chance));
          }
      }
 
@@ -302,12 +281,6 @@ public class Mastermind {
          return dialogueReturn;
      }
 
-     public String getEntity(){
-         return entity;
-     }
-
-     public void setEntity (String entity) { this.entity = entity; }
-
      public void setDialogueReturn(String dialogueReturn) {
          this.dialogueReturn = dialogueReturn;
      }
@@ -316,7 +289,7 @@ public class Mastermind {
          return chance;
      }
 
-     public void setChance(int chance) throws IOException { this.chance = chance; }
+     public void setChance(int chance) { this.chance = chance; }
 
      public int getReplay() {
          return replay;
@@ -330,19 +303,19 @@ public class Mastermind {
          return minimumNumber;
      }
 
-     public void setMinimumNumber(int minimumNumber) throws IOException { this.minimumNumber = minimumNumber; }
+     public void setMinimumNumber(int minimumNumber) { this.minimumNumber = minimumNumber; }
 
      public int getMaximumNumber() {
          return maximumNumber;
      }
 
-     public void setMaximumNumber(int maximumNumber) throws IOException { this.maximumNumber = maximumNumber; }
+     public void setMaximumNumber(int maximumNumber) { this.maximumNumber = maximumNumber; }
 
      public int getNumberCase() {
          return numberCase;
      }
 
-     public void setNumberCase(int numberCase) throws IOException { this.numberCase = numberCase; }
+     public void setNumberCase(int numberCase) { this.numberCase = numberCase; }
 
     public String getArgsRecovery() {
         return argsRecovery;
@@ -350,6 +323,30 @@ public class Mastermind {
 
     public void setArgsRecovery(String argsRecovery) {
         this.argsRecovery = argsRecovery;
+    }
+
+    public String getParameter1() {
+        return parameter1;
+    }
+
+    public void setParameter1(String parameter1) {
+        this.parameter1 = parameter1;
+    }
+
+    public String getParameter2() {
+        return parameter2;
+    }
+
+    public void setParameter2(String parameter2) {
+        this.parameter2 = parameter2;
+    }
+
+    public String getRefereeNumber() {
+        return refereeNumber;
+    }
+
+    public void setRefereeNumber(String refereeNumber) {
+        this.refereeNumber = refereeNumber;
     }
 }
 

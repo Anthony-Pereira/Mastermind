@@ -63,14 +63,14 @@ public class Main {
                             do {
                                     do {
                                         mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getRandomNumber());
-                                        mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRandomNumber(), mastermind.getName());
-                                        mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRandomNumber());
+                                        mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
+                                        mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber());
                                         if (mastermind.getChance() !=0) break;
                                     } while (mastermind.getChance() !=0);
                                 do {
                                     JOptionPane.showMessageDialog(null,String.format("DIFFICULTY: %s\nCHANCE: %s\n\nCPU: YOU'RE NUMBER IS %s",p.getProperty("numberCase"),mastermind.getChance(),mastermind.getComputerNumber()));
-                                    mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getPlayerNumber(),mastermind.getName());
-                                    mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getPlayerNumber());
+                                    mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getRefereeNumber(),mastermind.getName());
+                                    mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getRefereeNumber());
                                     if (mastermind.getChance() !=0) break;
                                 } while (mastermind.getChance() !=0);
 

@@ -11,7 +11,7 @@ public class Mastermind {
      public boolean responseIsGood = true;
 
      private  int mode;
-     private  int game;
+     private  int mainMenu;
      private  int replay;
      private  int menu;
      private  int chance;
@@ -33,7 +33,6 @@ public class Mastermind {
      private String answer;
      private String parameter1;
      private String parameter2;
-     private String entity;
 
      public Mastermind(){}
 
@@ -107,10 +106,11 @@ public class Mastermind {
          return this.mode;
      }
 
-     public String showRresult (int menu,int mode, String answer){
+     public String showRresult (int menu,int mode,int chance, String answer){
 
          this.menu = menu;
          this.mode = mode;
+         this.chance = chance;
          this.answer = answer;
 
          if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
@@ -209,7 +209,7 @@ public class Mastermind {
          System.out.println("number present : " + this.numberPresent);
      }
 
-     public void dialogue (int mode, String parameter1, String parameter2, String name) {
+     public void dialogue (int mode,String parameter1, String parameter2, String name) {
 
          this.mode = mode;
          this.parameter1 = parameter1;
@@ -345,8 +345,14 @@ public class Mastermind {
         return refereeNumber;
     }
 
-    public void setRefereeNumber(String refereeNumber) {
-        this.refereeNumber = refereeNumber;
+    public void setRefereeNumber(String refereeNumber) { this.refereeNumber = refereeNumber; }
+
+    public int getMainMenu() {
+        return mainMenu;
+    }
+
+    public void setMainMenu(int mainMenu) {
+        this.mainMenu = mainMenu;
     }
 }
 

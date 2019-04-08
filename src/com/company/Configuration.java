@@ -2,6 +2,8 @@ package com.company;
 
 import jdk.nashorn.internal.parser.Scanner;
 
+import javax.swing.*;
+
 public class Configuration  {
 /*
     public String compare() {
@@ -496,14 +498,14 @@ public class Configuration  {
                 Game.replay = JOptionPane.showConfirmDialog(null, String.format("REPLAY ?", JOptionPane.YES_NO_OPTION));
             }
         } while (Game.replay == 0 || Game.replayDevMode == 'y');
-    }*/
+    }
 
 
 ////////////////////////////////
 //INTERFACE DUEL
 ///////////////////////////////////////////////
 
-/*
+
     static String playerDuelDialogue() {
 
         if (Game.quanticNumber.equals(Game.playerNumber)) {
@@ -667,7 +669,39 @@ public class Configuration  {
             Game.extentionComputerNumberUnit --;
         }
 
-        return Game.computerNumber;}*/
+        return Game.computerNumber;
 
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+     do {
+        mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
+        mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase")));
+        mastermind.setRefereeNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+        System.out.println("referee number is: " + mastermind.getRefereeNumber());
+        JOptionPane.showMessageDialog(null, String.format("DIFFICULTY: %s\n\nREFEREE: FIND MY NUMBER\nGOOD LUCK !", p.getProperty("numberCase")));
 
+        do {
+            do {
+                mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getChance(), mastermind.getRandomNumber());
+                mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
+                mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber());
+                if (challenger.getChance() != 0) { break; }
+            } while (challenger.getChance() != 0);
+
+            if (challenger.getChance() == 0) { break; }
+
+            do {
+                JOptionPane.showMessageDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\n\nCPU: YOU'RE NUMBER IS %s", p.getProperty("numberCase"), mastermind.getChance(), mastermind.getComputerNumber()));
+                mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
+                mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getRefereeNumber());
+                if (defender.getChance() != 0) { break; }
+            } while (defender.getChance() != 0);
+
+            if (defender.getChance() == 0) { break; }
+
+        } while (challenger.getChance() != 0 || defender.getChance() != 0);
+        mastermind.setReplay(JOptionPane.showConfirmDialog(null, String.format("REPLAY", JOptionPane.YES_NO_OPTION)));
+    } while (mastermind.getReplay() == 0); */
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

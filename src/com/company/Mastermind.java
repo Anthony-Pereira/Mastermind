@@ -89,7 +89,7 @@ public class Mastermind {
 
          this.menu = menu;
 
-         this.mode = Integer.parseInt(JOptionPane.showInputDialog(null, String.format("MODE [ 1 CHALLENGER - 2 DEFENDER - 3 DUEL ]")));    //JBUTTON
+         this.mode = Integer.parseInt(JOptionPane.showInputDialog(null, String.format("GAME [ 1 CHALLENGER - 2 DEFENDER - 3 DUEL ]")));    //JBUTTON
 
          if (this.mode == 1) {
              JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationChallengerMode")));
@@ -153,13 +153,6 @@ public class Mastermind {
          this.numberPresent = 0;
 
          for (int i=0;i<Integer.parseInt(p.getProperty("numberCase"));i++) {
-
-             //al.add(this.parameter1.charAt(i));
-             //al.add(this.parameter2.charAt(i));
-             /*al.add(arrayClue);
-             al.add(cases);
-             al.add(arrayNumberWellPositioned);
-             al.add(arrayIndex);*/
 
              if (this.parameter1.charAt(i) < this.parameter2.charAt(i)) {
                  arrayClue[i] = '+';

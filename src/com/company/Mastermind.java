@@ -2,7 +2,6 @@ package com.company;
 
 import javax.swing.*;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Properties;
 
 public class Mastermind {
@@ -10,29 +9,31 @@ public class Mastermind {
      private boolean systemMode = false;
      public boolean responseIsGood = true;
 
-     private  int mode;
-     private  int mainMenu;
-     private  int replay;
      private  int menu;
+     private  int mode;
+     private  int replay;
+     private  int mainMenu;
+
      private  int chance;
      private  int numberCase;
      private  int randomNumber;
-
      private  int minimumNumber;
      private  int maximumNumber;
      private  int numberPresent;
      private  int numberWellPositioned;
 
-     private String arrayClue="";
      private String argsRecovery;
-     private String name = "USER";
-     private String dialogueReturn = "error";
-     private String playerNumber="???";
-     private String computerNumber;
-     private String refereeNumber;
      private String answer;
      private String parameter1;
      private String parameter2;
+     private String playerNumber="???";
+     private String computerNumber;
+     private String refereeNumber;
+     private String arrayClue="";
+     private String name = "USER";
+     private String dialogueReturn = "error";
+
+
 
      public Mastermind(){}
 
@@ -76,7 +77,8 @@ public class Mastermind {
 
      public int menu () {
 
-         this.menu = Integer.parseInt(JOptionPane.showInputDialog(null, String.format("MODE [ 1 PUZZLE - 2 ENIGMA ]")));    //JBUTTON
+         String[] options = {"PUZZLE", "ENIGMA"};
+         this.menu = JOptionPane.showOptionDialog(null, "SELECT MODE", "Click a button", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
          return this.menu;
      }
@@ -89,17 +91,18 @@ public class Mastermind {
 
          this.menu = menu;
 
-         this.mode = Integer.parseInt(JOptionPane.showInputDialog(null, String.format("GAME [ 1 CHALLENGER - 2 DEFENDER - 3 DUEL ]")));    //JBUTTON
+         String[] options = {"CHALLENGER", "DEFENDER", "DUEL"};
+         this.mode = JOptionPane.showOptionDialog(null, "SELECT GAME", "Click a button", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
-         if (this.mode == 1) {
+         if (this.mode == 0) {
              JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationChallengerMode")));
          }
 
-         else if (this.mode == 2) {
+         else if (this.mode == 1) {
              JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationDefenderMode")));
          }
 
-         else if (this.mode == 3) {
+         else if (this.mode == 2) {
              JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationDuelMode")));
          }
 
@@ -117,8 +120,8 @@ public class Mastermind {
 
              do {
                  try {
-                     if (this.menu == 1) {this.playerNumber = JOptionPane.showInputDialog(null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.arrayClue)));}
-                     else if (this.menu == 2) {this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.numberWellPositioned, this.numberPresent));}
+                     if (this.menu == 0) {this.playerNumber = JOptionPane.showInputDialog(null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.arrayClue)));}
+                     else if (this.menu == 1) {this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.numberWellPositioned, this.numberPresent));}
                      responseIsGood = true;
                  } catch (Exception e) {
                      JOptionPane.showMessageDialog(null, String.format("WRONG ANSWER"));
@@ -144,8 +147,6 @@ public class Mastermind {
          int[] cases = new int[Integer.parseInt(p.getProperty("numberCase"))];
          int[] arrayNumberWellPositioned = new int[Integer.parseInt(p.getProperty("numberCase"))];
          int[] arrayIndex = new int[Integer.parseInt(p.getProperty("numberCase"))];
-
-         ArrayList al = new ArrayList();
 
          this.computerNumber = "";
          this.arrayClue = "";
@@ -214,7 +215,7 @@ public class Mastermind {
              Integer.toString(this.chance = 0);
          } else if (this.chance == 0) {
              JOptionPane.showMessageDialog(null,String.format("\nREFEREE: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: %s\nYOU LOOSE\n", this.parameter1));
-             if (this.menu == 3) { String.format("REFEREE WIN"); }
+             if (this.mode == 2) { String.format("REFEREE WIN"); }
          }else {
              JOptionPane.showMessageDialog(null,String.format("\nREFEREE: WRONG ANSWERS\n"));
              this.chance--;
@@ -222,7 +223,7 @@ public class Mastermind {
          }
      }
 
-     /* GETTERS AND SETTERS */
+    /* GETTERS AND SETTERS */
 
      public String getRandomNumber() {
          return Integer.toString(this.randomNumber);

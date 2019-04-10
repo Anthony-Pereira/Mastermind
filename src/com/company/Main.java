@@ -19,29 +19,12 @@ public class Main {
         mastermind.introduction();
         mastermind.createName();
         do {
-            do {
-                try {
-                    mastermind.menu();
-                    mastermind.responseIsGood = true;
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null,"PLEASE SELECT A MODE");
-                    mastermind.responseIsGood = false;
-                }
-            } while (!mastermind.responseIsGood || mastermind.getMenu() < 1 || mastermind.getMenu() > 2 );
-
-            do {
-                try {
-                    mastermind.games(mastermind.getMenu());
-                    mastermind.responseIsGood = true;
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null,"PLEASE SELECT A GAME");
-                    mastermind.responseIsGood = false;
-                }
-            } while (!mastermind.responseIsGood || mastermind.getMode() < 1 || mastermind.getMode() > 3 );
+             mastermind.menu();
+             mastermind.games(mastermind.getMenu());
 
                 switch (mastermind.getMode()) {
 
-                    case 1:
+                    case 0:
                         do {
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
                             mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase")));
@@ -54,7 +37,7 @@ public class Main {
                         } while (mastermind.getReplay() == 0);
                         break;
 
-                    case 2:
+                    case 1:
                         do {
                             mastermind.setName("CPU");
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
@@ -69,12 +52,15 @@ public class Main {
                         } while (mastermind.getReplay() == 0);
                         break;
 
-                    case 3:
+                    case 2:
                         do {
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
-                            mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase")));
+                            //mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase")));
                             mastermind.setRefereeNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+                            mastermind.setComputerNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             System.out.println("referee number is: " + mastermind.getRefereeNumber());
+                            System.out.println("cpu number is: " + mastermind.getComputerNumber());
+
                             JOptionPane.showMessageDialog(null, String.format("%s NUMBER COMBINATION\n\nREFEREE: FIND MY NUMBER\nGOOD LUCK !", p.getProperty("numberCase")));
 
                             do {
@@ -88,6 +74,7 @@ public class Main {
                                 do {
                                     JOptionPane.showMessageDialog(null, String.format("%s NUMBER COMBINATION\nCHANCE: %s\n\nCPU: YOU'RE NUMBER IS %s", p.getProperty("numberCase"), mastermind.getChance(), mastermind.getComputerNumber()));
                                     mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
+                                    System.out.println("***referee number is: " + mastermind.getRefereeNumber());
                                     mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getRefereeNumber());
                                     if (mastermind.getChance() != 0) { break; }
                                 } while (mastermind.getChance() != 0);

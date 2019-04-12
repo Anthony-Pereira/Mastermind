@@ -17,7 +17,7 @@ public class Main {
         p.load(is);
 
         mastermind.introduction();
-        mastermind.createName();
+        mastermind.setName(mastermind.createName());
         do {
              mastermind.menu();
              mastermind.games(mastermind.getMenu());
@@ -39,7 +39,7 @@ public class Main {
 
                     case 1:
                         do {
-                            mastermind.setName("CPU");
+                            mastermind.setName("BRAINY");
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
                             mastermind.setComputerNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             mastermind.setPlayerNumber(JOptionPane.showInputDialog(null, String.format("%s NUMBER COMBINATION\n", p.getProperty("numberCase"))));

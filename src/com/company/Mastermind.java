@@ -30,7 +30,7 @@ public class Mastermind {
      private String computerNumber;
      private String refereeNumber;
      private String arrayClue="";
-     private String name = "USER";
+     private String name;
      private String dialogueReturn = "error";
 
 
@@ -61,8 +61,9 @@ public class Mastermind {
 
      public String createName () {
 
-         this.name = JOptionPane.showInputDialog(null, String.format("ENTER YOUR NAME"));
+         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/name.jpg");
 
+         this.name = (String) JOptionPane.showInputDialog(null,"ENTER YOUR NAME","MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_01,null,"USER");
          return this.name;
      }
 
@@ -72,13 +73,20 @@ public class Mastermind {
          InputStream is = new FileInputStream("src/com/resources/Config.properties");
          p.load(is);
 
-         JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentation")));
+             ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mastermind_brain.jpg");
+             ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/presentation.jpg");
+
+             JOptionPane.showMessageDialog(null, null, "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
+             JOptionPane.showMessageDialog(null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+
      }
 
      public int menu () {
 
          String[] options = {"PUZZLE", "ENIGMA"};
-         this.menu = JOptionPane.showOptionDialog(null, "SELECT MODE", "Click a button", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+         ImageIcon icon = new ImageIcon("src/com/resources/picture/mode.jpg");
+
+         this.menu = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
 
          return this.menu;
      }
@@ -92,18 +100,23 @@ public class Mastermind {
          this.menu = menu;
 
          String[] options = {"CHALLENGER", "DEFENDER", "DUEL"};
-         this.mode = JOptionPane.showOptionDialog(null, "SELECT GAME", "Click a button", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mode.jpg");
+         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/rule.jpg");
+
+
+         this.mode = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]);
+
 
          if (this.mode == 0) {
-             JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationChallengerMode")));
+             JOptionPane.showMessageDialog(null, "CHALLENGER MODE \nFIND THE SECRET COMPUTER COMBINATION\nGOOD LUCK !","MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 1) {
-             JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationDefenderMode")));
+             JOptionPane.showMessageDialog(null, "DEFENDER MODE \nCOMPUTER MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 2) {
-             JOptionPane.showMessageDialog(null, String.format(p.getProperty("presentationDuelMode")));
+             JOptionPane.showMessageDialog(null, "DUEL MODE \nTURN-BASED GAMES", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          return this.mode;
@@ -116,6 +129,8 @@ public class Mastermind {
          this.chance = chance;
          this.answer = answer;
 
+         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mode.jpg");
+
          if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
 
              do {
@@ -124,7 +139,8 @@ public class Mastermind {
                      else if (this.menu == 1) {this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.numberWellPositioned, this.numberPresent));}
                      responseIsGood = true;
                  } catch (Exception e) {
-                     JOptionPane.showMessageDialog(null, String.format("WRONG ANSWER"));
+                     JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     //JOptionPane.showMessageDialog(null, String.format("WRONG ANSWER"));
                      responseIsGood = false;
                  }
              } while (!this.responseIsGood);
@@ -210,14 +226,19 @@ public class Mastermind {
          this.parameter2 = parameter2;
          this.name = name;
 
+         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/win.jpg");
+         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/.jpg");
+         ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/wrong_answer.jpg");
+
+
          if (this.parameter1.equals(this.parameter2)) {
-             JOptionPane.showMessageDialog(null, String.format("\nREFEREE: CONGRATULATION %s WIN !\n", this.name.toUpperCase()));
+             JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
              Integer.toString(this.chance = 0);
          } else if (this.chance == 0) {
-             JOptionPane.showMessageDialog(null,String.format("\nREFEREE: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: %s\nYOU LOOSE\n", this.parameter1));
+             JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
              if (this.mode == 2) { String.format("REFEREE WIN"); }
          }else {
-             JOptionPane.showMessageDialog(null,String.format("\nREFEREE: WRONG ANSWERS\n"));
+             JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
              this.chance--;
              System.out.println(String.format("chance: %s",this.chance));
          }
@@ -238,7 +259,19 @@ public class Mastermind {
      }
 
      public void setName(String name) {
+
+         ImageIcon icon = new ImageIcon("src/com/resources/picture/mastermind_menu.png");
+
          this.name = name;
+
+         do {
+             if (this.name.length() > 15) {
+                 this.responseIsGood = false;
+                 JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon);
+                 this.createName();
+             } else this.responseIsGood = true;
+         } while (this.responseIsGood = false);
+
      }
 
      public int getMode() {

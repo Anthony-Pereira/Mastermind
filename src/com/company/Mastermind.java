@@ -6,8 +6,8 @@ import java.util.Properties;
 
 public class Mastermind {
 
-     private boolean systemMode = false;
-     public boolean responseIsGood = true;
+     private Boolean systemMode = false;
+     private Boolean responseIsGood = true;
 
      private  int menu;
      private  int mode;
@@ -33,18 +33,21 @@ public class Mastermind {
      private String name;
      private String dialogueReturn = "error";
 
-
-
      public Mastermind(){}
 
-     public boolean systemMode(String[] args){
+    ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/pain.jpg");
+    ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/happy.jpg");
+    ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/wrong_answer.jpg");
+
+
+    public boolean systemMode(String[] args){
 
          this.argsRecovery = String.valueOf(args);
 
          return this.systemMode;
      }
 
-     public String randomNumber(int numberCase) {
+    public String randomNumber(int numberCase) {
 
          this.numberCase = numberCase;
 
@@ -59,7 +62,7 @@ public class Mastermind {
          return Integer.toString(randomNumber);
      }
 
-     public String createName () {
+    public String createName () {
 
          ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/name.jpg");
 
@@ -67,7 +70,7 @@ public class Mastermind {
          return this.name;
      }
 
-     public void introduction () throws IOException {
+    public void introduction () throws IOException {
 
          Properties p = new Properties();
          InputStream is = new FileInputStream("src/com/resources/Config.properties");
@@ -81,7 +84,7 @@ public class Mastermind {
 
      }
 
-     public int menu () {
+    public int menu () {
 
          String[] options = {"PUZZLE", "ENIGMA"};
          ImageIcon icon = new ImageIcon("src/com/resources/picture/mode.jpg");
@@ -91,7 +94,7 @@ public class Mastermind {
          return this.menu;
      }
 
-     public int games (int menu) throws IOException {
+    public int games (int menu) throws IOException {
 
          Properties p = new Properties();
          InputStream is = new FileInputStream("src/com/resources/Config.properties");
@@ -108,11 +111,11 @@ public class Mastermind {
 
 
          if (this.mode == 0) {
-             JOptionPane.showMessageDialog(null, "CHALLENGER MODE \nFIND THE SECRET COMPUTER COMBINATION\nGOOD LUCK !","MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "CHALLENGER MODE \nFIND MY SECRET COMBINATION\nGOOD LUCK !","MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 1) {
-             JOptionPane.showMessageDialog(null, "DEFENDER MODE \nCOMPUTER MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "DEFENDER MODE \nI MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 2) {
@@ -122,7 +125,7 @@ public class Mastermind {
          return this.mode;
      }
 
-     public String showRresult (int menu,int mode,int chance, String answer){
+    public String showRresult (int menu,int mode,int chance, String answer){
 
          this.menu = menu;
          this.mode = mode;
@@ -140,7 +143,6 @@ public class Mastermind {
                      responseIsGood = true;
                  } catch (Exception e) {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
-                     //JOptionPane.showMessageDialog(null, String.format("WRONG ANSWER"));
                      responseIsGood = false;
                  }
              } while (!this.responseIsGood);
@@ -148,7 +150,7 @@ public class Mastermind {
          return this.playerNumber;
      }
 
-     public void logic (int mode,int numberCase, String parameter1, String parameter2) throws IOException {
+    public void logic (int mode,int numberCase, String parameter1, String parameter2) throws IOException {
 
          Properties p = new Properties();
          InputStream is = new FileInputStream("src/com/resources/Config.properties");
@@ -219,28 +221,60 @@ public class Mastermind {
          System.out.println("number present : " + this.numberPresent);
      }
 
-     public void dialogue (int mode,String parameter1, String parameter2, String name) {
+    public void dialogue (int mode, String parameter1, String parameter2, String name) {
 
          this.mode = mode;
          this.parameter1 = parameter1;
          this.parameter2 = parameter2;
          this.name = name;
 
-         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/win.jpg");
-         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/.jpg");
-         ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/wrong_answer.jpg");
+         switch (this.mode){
 
+             case 0 :
 
-         if (this.parameter1.equals(this.parameter2)) {
-             JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
-             Integer.toString(this.chance = 0);
-         } else if (this.chance == 0) {
-             JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
-             if (this.mode == 2) { String.format("REFEREE WIN"); }
-         }else {
-             JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
-             this.chance--;
-             System.out.println(String.format("chance: %s",this.chance));
+                 if (this.parameter1.equals(this.parameter2)) {
+                     JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+ " , YOU WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     Integer.toString(this.chance = 0);
+                 } else if (this.chance == 0) {
+                     JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                 }else {
+                     JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
+                     this.chance--;
+                     System.out.println(String.format("chance: %s",this.chance));
+                 }
+
+                 break;
+
+             case 1 :
+
+                 if (this.parameter1.equals(this.parameter2)) {
+                     JOptionPane.showMessageDialog(null, "BRAINY: YEAH !!! I WON !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                     Integer.toString(this.chance = 0);
+                 } else if (this.chance == 0) {
+                     JOptionPane.showMessageDialog(null, "BRAINY: I DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nI LOST\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                 }else {
+                     JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
+                     this.chance--;
+                     System.out.println(String.format("chance: %s",this.chance));
+                 }
+
+                 break;
+
+             case 2 :
+
+                 if (this.parameter1.equals(this.parameter2)) {
+                     JOptionPane.showMessageDialog(null, "REFEREE: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     Integer.toString(this.chance = 0);
+                 } else if (this.chance == 0) {
+                     JOptionPane.showMessageDialog(null, "REFEREE: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                     if (this.mode == 2) { String.format("REFEREE WIN"); }
+                 }else {
+                     JOptionPane.showMessageDialog(null, "REFEREE ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
+                     this.chance--;
+                     System.out.println(String.format("chance: %s",this.chance));
+                 }
+
+                 break;
          }
      }
 
@@ -381,6 +415,16 @@ public class Mastermind {
     public void setMainMenu(int mainMenu) {
         this.mainMenu = mainMenu;
     }
+
+    public Boolean getResponseIsGood() {
+        return responseIsGood;
+    }
+
+    public void setResponseIsGood(Boolean responseIsGood) {
+        this.responseIsGood = responseIsGood;
+    }
+
+
 }
 
 

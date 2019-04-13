@@ -55,7 +55,6 @@ public class Main {
                     case 2:
                         do {
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
-                            //mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase")));
                             mastermind.setRefereeNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             mastermind.setComputerNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             System.out.println("referee number is: " + mastermind.getRefereeNumber());

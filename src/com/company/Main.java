@@ -8,7 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Mastermind mastermind = new Mastermind();
+        Getters mastermind = new Getters();
+        ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/replay.jpg");
+        ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/main_menu.jpg");
+        ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/good_bye.jpg");
+        String[] options = {"YES", "NO"};
+
+
 
         mastermind.systemMode(args);
 
@@ -86,9 +92,9 @@ public class Main {
 
                             default:
                 }
-            mastermind.setMainMenu(JOptionPane.showConfirmDialog(null, String.format("MAIN MENU", JOptionPane.YES_NO_OPTION)));
+            mastermind.setMainMenu(JOptionPane.showOptionDialog(null, "MAIN MENU ?", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_02, options, options[0]));
         }while (mastermind.getMainMenu() == 0);
-        JOptionPane.showMessageDialog(null,String.format("GOOD BYE"));
+        JOptionPane.showMessageDialog(null, "", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_03);
     }
 }
 

@@ -6,32 +6,32 @@ import java.util.Properties;
 
 public class Mastermind {
 
-     private Boolean systemMode = false;
-     private Boolean responseIsGood = true;
+    protected Boolean systemMode = false;
+    protected Boolean responseIsGood = true;
 
-     private  int menu;
-     private  int mode;
-     private  int replay;
-     private  int mainMenu;
+    protected  int menu;
+    protected  int mode;
+    protected  int replay;
+    protected  int mainMenu;
 
-     private  int chance;
-     private  int numberCase;
-     private  int randomNumber;
-     private  int minimumNumber;
-     private  int maximumNumber;
-     private  int numberPresent;
-     private  int numberWellPositioned;
+    protected  int chance;
+    protected  int numberCase;
+    protected  int randomNumber;
+    protected  int minimumNumber;
+    protected  int maximumNumber;
+    protected  int numberPresent;
+    protected  int numberWellPositioned;
 
-     private String argsRecovery;
-     private String answer;
-     private String parameter1;
-     private String parameter2;
-     private String playerNumber="???";
-     private String computerNumber;
-     private String refereeNumber;
-     private String arrayClue="";
-     private String name;
-     private String dialogueReturn = "error";
+    protected String argsRecovery;
+    protected String answer;
+    protected String parameter1;
+    protected String parameter2;
+    protected String playerNumber="???";
+    protected String computerNumber;
+    protected String refereeNumber;
+    protected String arrayClue="";
+    protected String name;
+    protected String dialogueReturn = "error";
 
      public Mastermind(){}
 
@@ -45,7 +45,7 @@ public class Mastermind {
          this.argsRecovery = String.valueOf(args);
 
          return this.systemMode;
-     }
+    }
 
     public String randomNumber(int numberCase) {
 
@@ -60,7 +60,7 @@ public class Mastermind {
          this.randomNumber = this.minimumNumber + (int) (Math.random() * (this.maximumNumber - this.minimumNumber + 1));
 
          return Integer.toString(randomNumber);
-     }
+    }
 
     public String createName () {
 
@@ -68,7 +68,7 @@ public class Mastermind {
 
          this.name = (String) JOptionPane.showInputDialog(null,"ENTER YOUR NAME","MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_01,null,"USER");
          return this.name;
-     }
+    }
 
     public void introduction () throws IOException {
 
@@ -82,7 +82,7 @@ public class Mastermind {
              JOptionPane.showMessageDialog(null, null, "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
              JOptionPane.showMessageDialog(null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
 
-     }
+    }
 
     public int menu () {
 
@@ -92,7 +92,7 @@ public class Mastermind {
          this.menu = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
 
          return this.menu;
-     }
+    }
 
     public int games (int menu) throws IOException {
 
@@ -103,8 +103,8 @@ public class Mastermind {
          this.menu = menu;
 
          String[] options = {"CHALLENGER", "DEFENDER", "DUEL"};
-         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mode.jpg");
-         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/rule.jpg");
+         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/game.jpg");
+        ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/rule.jpg");
 
 
          this.mode = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]);
@@ -123,7 +123,7 @@ public class Mastermind {
          }
 
          return this.mode;
-     }
+    }
 
     public String showRresult (int menu,int mode,int chance, String answer){
 
@@ -148,7 +148,7 @@ public class Mastermind {
              } while (!this.responseIsGood);
 
          return this.playerNumber;
-     }
+    }
 
     public void logic (int mode,int numberCase, String parameter1, String parameter2) throws IOException {
 
@@ -219,7 +219,7 @@ public class Mastermind {
          System.out.println("clue : " + this.arrayClue);
          System.out.println( "number well positioned : " + this.numberWellPositioned);
          System.out.println("number present : " + this.numberPresent);
-     }
+    }
 
     public void dialogue (int mode, String parameter1, String parameter2, String name) {
 
@@ -280,19 +280,19 @@ public class Mastermind {
 
     /* GETTERS AND SETTERS */
 
-     public String getRandomNumber() {
+    public String getRandomNumber() {
          return Integer.toString(this.randomNumber);
-     }
+    }
 
-     public void setRandomNumber(int randomNumber) {
+    public void setRandomNumber(int randomNumber) {
          this.randomNumber = randomNumber;
-     }
+    }
 
-     public String getName() {
+    public String getName() {
          return this.name;
-     }
+    }
 
-     public void setName(String name) {
+    public void setName(String name) {
 
          ImageIcon icon = new ImageIcon("src/com/resources/picture/mastermind_menu.png");
 
@@ -306,124 +306,7 @@ public class Mastermind {
              } else this.responseIsGood = true;
          } while (this.responseIsGood = false);
 
-     }
-
-     public int getMode() {
-         return this.mode;
-     }
-
-     public void setMode(int mode) {
-         this.mode = mode;
-     }
-
-     public int getMenu() {
-         return this.menu;
-     }
-
-     public void setMenu(int menu) {
-         this.menu = menu;
-     }
-
-     public String getPlayerNumber() {
-         return this.playerNumber ;
-     }
-
-     public void setPlayerNumber(String playerNumber) { this.playerNumber = playerNumber; }
-
-     public String getComputerNumber() {
-         return computerNumber;
-     }
-
-     public void setComputerNumber(String computerNumber) {
-         this.computerNumber = computerNumber;
-     }
-
-     public String getDialogueReturn() {
-         return dialogueReturn;
-     }
-
-     public void setDialogueReturn(String dialogueReturn) {
-         this.dialogueReturn = dialogueReturn;
-     }
-
-     public int getChance() {
-         return chance;
-     }
-
-     public void setChance(int chance) { this.chance = chance; }
-
-     public int getReplay() {
-         return replay;
-     }
-
-     public void setReplay(int replay) {
-         this.replay = replay;
-     }
-
-     public int getMinimumNumber() {
-         return minimumNumber;
-     }
-
-     public void setMinimumNumber(int minimumNumber) { this.minimumNumber = minimumNumber; }
-
-     public int getMaximumNumber() {
-         return maximumNumber;
-     }
-
-     public void setMaximumNumber(int maximumNumber) { this.maximumNumber = maximumNumber; }
-
-     public int getNumberCase() {
-         return numberCase;
-     }
-
-     public void setNumberCase(int numberCase) { this.numberCase = numberCase; }
-
-    public String getArgsRecovery() {
-        return argsRecovery;
     }
-
-    public void setArgsRecovery(String argsRecovery) {
-        this.argsRecovery = argsRecovery;
-    }
-
-    public String getParameter1() {
-        return parameter1;
-    }
-
-    public void setParameter1(String parameter1) {
-        this.parameter1 = parameter1;
-    }
-
-    public String getParameter2() {
-        return parameter2;
-    }
-
-    public void setParameter2(String parameter2) {
-        this.parameter2 = parameter2;
-    }
-
-    public String getRefereeNumber() {
-        return refereeNumber;
-    }
-
-    public void setRefereeNumber(String refereeNumber) { this.refereeNumber = refereeNumber; }
-
-    public int getMainMenu() {
-        return mainMenu;
-    }
-
-    public void setMainMenu(int mainMenu) {
-        this.mainMenu = mainMenu;
-    }
-
-    public Boolean getResponseIsGood() {
-        return responseIsGood;
-    }
-
-    public void setResponseIsGood(Boolean responseIsGood) {
-        this.responseIsGood = responseIsGood;
-    }
-
 
 }
 

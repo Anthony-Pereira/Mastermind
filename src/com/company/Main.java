@@ -14,8 +14,6 @@ public class Main {
         ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/good_bye.jpg");
         String[] options = {"YES", "NO"};
 
-
-
         mastermind.systemMode(args);
 
         Properties p = new Properties();
@@ -39,7 +37,7 @@ public class Main {
                                 mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRandomNumber(), mastermind.getName());
                                 mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRandomNumber());
                             } while (mastermind.getChance() != 0);
-                            mastermind.setReplay(JOptionPane.showConfirmDialog(null, String.format("REPLAY", JOptionPane.YES_NO_OPTION)));
+                            mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
                         } while (mastermind.getReplay() == 0);
                         break;
 
@@ -54,7 +52,8 @@ public class Main {
                                 mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getPlayerNumber(), mastermind.getName());
                                 mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getPlayerNumber());
                             } while (mastermind.getChance() != 0);
-                            mastermind.setReplay(JOptionPane.showConfirmDialog(null, String.format("REPLAY", JOptionPane.YES_NO_OPTION)));
+                            mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
+
                         } while (mastermind.getReplay() == 0);
                         break;
 
@@ -85,10 +84,9 @@ public class Main {
                                 } while (mastermind.getChance() != 0);
                                 if (mastermind.getChance() == 0) { break;}
                             } while (mastermind.getChance() != 0 || mastermind.getChance() != 0);
-                            mastermind.setReplay(JOptionPane.showConfirmDialog(null, String.format("REPLAY", JOptionPane.YES_NO_OPTION)));
+                            mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
                         } while (mastermind.getReplay() == 0);
-
-                            break;
+                        break;
 
                             default:
                 }

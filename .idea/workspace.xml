@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d26a1b-6353-4ab2-af7c-403d777bb286" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Getters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/company/Mastermind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/company/Mastermind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/resources/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/mastermind_menu.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Mastermind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Mastermind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/mode.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/resources/picture/mode.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/happy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/resources/picture/happy.jpg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,13 +65,13 @@
     <session id="-1025654254">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10066" />
+          <entry key="java" value="10087" />
           <entry key="properties" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10066" />
+          <entry key="JAVA" value="10087" />
           <entry key="Properties" value="15" />
         </counts>
       </usages-collector>
@@ -113,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="962">
-              <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+            <state relative-caret-position="529">
+              <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -358,7 +351,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555339484763" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555340198334" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/company/Main.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -649,8 +642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="962">
-          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+        <state relative-caret-position="529">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -26,7 +26,7 @@ public class Mastermind {
     protected String parameter1;
     protected String parameter2;
     protected String playerNumber="???";
-    protected String computerNumber;
+    protected String brainyNumber;
     protected String mrCpuNumber;
     protected String arrayClue="";
     protected String name;
@@ -163,7 +163,7 @@ public class Mastermind {
          int[] arrayNumberWellPositioned = new int[Integer.parseInt(p.getProperty("numberCase"))];
          int[] arrayIndex = new int[Integer.parseInt(p.getProperty("numberCase"))];
 
-         this.computerNumber = "";
+         this.brainyNumber = "";
          this.arrayClue = "";
          this.numberWellPositioned = 0;
          this.numberPresent = 0;
@@ -192,7 +192,7 @@ public class Mastermind {
              } else if (cases[i] != -1) {
                  cases[i] = 1;
              }
-             this.computerNumber+=Integer.toString(arrayIndex[i]);
+             this.brainyNumber+=Integer.toString(arrayIndex[i]);
              System.out.println(String.format("parameter 1: %s", this.parameter1));
              System.out.println(String.format("parameter 2: %s", this.parameter2));
              System.out.println(String.format("Le nombre de la colonne %s est: %s et deviens %s .",i,parameter1.charAt(i),arrayIndex[i]));

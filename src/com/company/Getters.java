@@ -28,11 +28,11 @@ public class Getters extends Mastermind {
     public void setPlayerNumber(String playerNumber) { this.playerNumber = playerNumber; }
 
     public String getBrainyNumber() {
-        return computerNumber;
+        return this.brainyNumber;
     }
 
     public void setBrainyNumber(String computerNumber) {
-        this.computerNumber = computerNumber;
+        this.brainyNumber = computerNumber;
     }
 
     public String getDialogueReturn() {
@@ -91,11 +91,11 @@ public class Getters extends Mastermind {
         this.parameter2 = parameter2;
     }
 
-    public String getRefereeNumber() {
+    public String getMrCpuNumber() {
         return mrCpuNumber;
     }
 
-    public void setRefereeNumber(String refereeNumber) { this.mrCpuNumber = refereeNumber; }
+    public void setMrCpuNumber(String refereeNumber) { this.mrCpuNumber = refereeNumber; }
 
     public int getMainMenu() {
         return mainMenu;

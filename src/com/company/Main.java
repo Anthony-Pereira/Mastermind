@@ -62,24 +62,24 @@ public class Main {
                     case 2:
                         do {
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
-                            mastermind.setRefereeNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+                            mastermind.setMrCpuNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             mastermind.setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
-                            System.out.println("referee number is: " + mastermind.getRefereeNumber());
-                            System.out.println("cpu number is: " + mastermind.getBrainyNumber());
+                            System.out.println("Mr CPU number is: " + mastermind.getMrCpuNumber());
+                            System.out.println("Brainy number is: " + mastermind.getBrainyNumber());
 
                             do {
                                 do {
                                     mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getChance(),mastermind.getSystemMode());
-                                    mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
-                                    mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber());
+                                    mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getMrCpuNumber(), mastermind.getName());
+                                    mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getMrCpuNumber());
                                     if (mastermind.getChance() != 0) { break; }
                                 } while (mastermind.getChance() != 0);
                                 if (mastermind.getChance() == 0) { break;}
                                 do {
                                     JOptionPane.showMessageDialog(null, "DIFFICULTY: "+p.getProperty("numberCase")+"\nCHANCE: "+mastermind.getChance()+"\nBRAINY: YOU'RE NUMBER IS "+mastermind.getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
-                                    mastermind.dialogue(mastermind.getMode(), mastermind.getBrainyNumber(), mastermind.getRefereeNumber(), mastermind.getName());
-                                    System.out.println("***referee number is: " + mastermind.getRefereeNumber());
-                                    mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getBrainyNumber(), mastermind.getRefereeNumber());
+                                    mastermind.dialogue(mastermind.getMode(), mastermind.getBrainyNumber(), mastermind.getMrCpuNumber(), mastermind.getName());
+                                    System.out.println("***Mr Cpu number is: " + mastermind.getMrCpuNumber());
+                                    mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getBrainyNumber(), mastermind.getMrCpuNumber());
                                     if (mastermind.getChance() != 0) { break; }
                                 } while (mastermind.getChance() != 0);
                                 if (mastermind.getChance() == 0) { break;}

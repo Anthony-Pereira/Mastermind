@@ -74,11 +74,10 @@ public class Main {
                                     mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getMrCpuNumber());
                                     if (mastermind.getChance() != 0) { break; }
                                 } while (mastermind.getChance() != 0);
-                                if (mastermind.getChance() == 0) { break;}
                                 do {
+                                    mastermind.setChance(mastermind.getChance() + 1);
                                     JOptionPane.showMessageDialog(null, "DIFFICULTY: "+p.getProperty("numberCase")+"\nCHANCE: "+mastermind.getChance()+"\nBRAINY: YOU'RE NUMBER IS "+mastermind.getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                     mastermind.dialogue(mastermind.getMode(), mastermind.getBrainyNumber(), mastermind.getMrCpuNumber(), mastermind.getName());
-                                    System.out.println("***Mr Cpu number is: " + mastermind.getMrCpuNumber());
                                     mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getBrainyNumber(), mastermind.getMrCpuNumber());
                                     if (mastermind.getChance() != 0) { break; }
                                 } while (mastermind.getChance() != 0);

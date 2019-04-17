@@ -22,10 +22,12 @@ public class Getters extends Mastermind {
     }
 
     public String getPlayerNumber() {
-        return this.playerNumber ;
+        return this.playerNumber;
     }
 
-    public void setPlayerNumber(String playerNumber) { this.playerNumber = playerNumber; }
+    public void setPlayerNumber(String playerNumber) {
+        this.playerNumber = playerNumber;
+    }
 
     public String getBrainyNumber() {
         return this.brainyNumber;
@@ -47,7 +49,9 @@ public class Getters extends Mastermind {
         return chance;
     }
 
-    public void setChance(int chance) { this.chance = chance; }
+    public void setChance(int chance) {
+        this.chance = chance;
+    }
 
     public int getReplay() {
         return replay;
@@ -61,19 +65,25 @@ public class Getters extends Mastermind {
         return minimumNumber;
     }
 
-    public void setMinimumNumber(int minimumNumber) { this.minimumNumber = minimumNumber; }
+    public void setMinimumNumber(int minimumNumber) {
+        this.minimumNumber = minimumNumber;
+    }
 
     public int getMaximumNumber() {
         return maximumNumber;
     }
 
-    public void setMaximumNumber(int maximumNumber) { this.maximumNumber = maximumNumber; }
+    public void setMaximumNumber(int maximumNumber) {
+        this.maximumNumber = maximumNumber;
+    }
 
     public int getNumberCase() {
         return numberCase;
     }
 
-    public void setNumberCase(int numberCase) { this.numberCase = numberCase; }
+    public void setNumberCase(int numberCase) {
+        this.numberCase = numberCase;
+    }
 
     public String getParameter1() {
         return parameter1;
@@ -95,7 +105,9 @@ public class Getters extends Mastermind {
         return mrCpuNumber;
     }
 
-    public void setMrCpuNumber(String refereeNumber) { this.mrCpuNumber = refereeNumber; }
+    public void setMrCpuNumber(String refereeNumber) {
+        this.mrCpuNumber = refereeNumber;
+    }
 
     public int getMainMenu() {
         return mainMenu;
@@ -142,7 +154,7 @@ public class Getters extends Mastermind {
     }
 
     public Boolean getSystemMode() {
-        return systemMode;
+        return this.systemMode;
     }
 
     public void setSystemMode(Boolean systemMode) {

@@ -27,7 +27,7 @@ public class Mastermind {
     protected String parameter2;
     protected String playerNumber="???";
     protected String computerNumber;
-    protected String refereeNumber;
+    protected String mrCpuNumber;
     protected String arrayClue="";
     protected String name;
     protected String dialogueReturn = "error";

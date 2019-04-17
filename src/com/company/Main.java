@@ -12,6 +12,8 @@ public class Main {
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/replay.jpg");
         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/main_menu.jpg");
         ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/good_bye.jpg");
+        ImageIcon icon_04 = new ImageIcon("src/com/resources/picture/your_number_is.jpg");
+
         String[] options = {"YES", "NO"};
 
         mastermind.systemMode(args);
@@ -33,7 +35,7 @@ public class Main {
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
                             mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase")));
                             do {
-                                mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getChance(), mastermind.getRandomNumber());
+                                mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getChance(),mastermind.getSystemMode());
                                 mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRandomNumber(), mastermind.getName());
                                 mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRandomNumber());
                             } while (mastermind.getChance() != 0);
@@ -46,9 +48,9 @@ public class Main {
                             mastermind.setName("BRAINY");
                             mastermind.setChance(Integer.parseInt(p.getProperty("chance")));
                             mastermind.setComputerNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
-                            mastermind.setPlayerNumber(JOptionPane.showInputDialog(null, String.format("%s NUMBER COMBINATION\n", p.getProperty("numberCase"))));
+                            mastermind.setPlayerNumber(JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\n", p.getProperty("numberCase"))));
                             do {
-                                JOptionPane.showMessageDialog(null, String.format("%s NUMBER COMBINATION\nCHANCE: %s\n\nCPU: YOU'RE NUMBER IS %s", p.getProperty("numberCase"), mastermind.getChance(), mastermind.getComputerNumber()));
+                                JOptionPane.showMessageDialog(null, "DIFFICULTY: "+p.getProperty("numberCase")+" \nCHANCE: "+mastermind.getChance()+"\nBRAINY: YOU'RE NUMBER IS "+mastermind.getComputerNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                 mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getPlayerNumber(), mastermind.getName());
                                 mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getPlayerNumber());
                             } while (mastermind.getChance() != 0);
@@ -65,18 +67,16 @@ public class Main {
                             System.out.println("referee number is: " + mastermind.getRefereeNumber());
                             System.out.println("cpu number is: " + mastermind.getComputerNumber());
 
-                            JOptionPane.showMessageDialog(null, String.format("%s NUMBER COMBINATION\n\nREFEREE: FIND MY NUMBER\nGOOD LUCK !", p.getProperty("numberCase")));
-
                             do {
                                 do {
-                                    mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getChance(), mastermind.getRandomNumber());
+                                    mastermind.showRresult(mastermind.getMenu(), mastermind.getMode(),mastermind.getChance(),mastermind.getSystemMode());
                                     mastermind.dialogue(mastermind.getMode(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
                                     mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getPlayerNumber(), mastermind.getRefereeNumber());
                                     if (mastermind.getChance() != 0) { break; }
                                 } while (mastermind.getChance() != 0);
                                 if (mastermind.getChance() == 0) { break;}
                                 do {
-                                    JOptionPane.showMessageDialog(null, String.format("%s NUMBER COMBINATION\nCHANCE: %s\n\nCPU: YOU'RE NUMBER IS %s", p.getProperty("numberCase"), mastermind.getChance(), mastermind.getComputerNumber()));
+                                    JOptionPane.showMessageDialog(null, "DIFFICULTY: "+p.getProperty("numberCase")+"\nCHANCE: "+mastermind.getChance()+"\nBRAINY: YOU'RE NUMBER IS "+mastermind.getComputerNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                     mastermind.dialogue(mastermind.getMode(), mastermind.getComputerNumber(), mastermind.getRefereeNumber(), mastermind.getName());
                                     System.out.println("***referee number is: " + mastermind.getRefereeNumber());
                                     mastermind.logic(mastermind.getMode(), mastermind.getNumberCase(), mastermind.getComputerNumber(), mastermind.getRefereeNumber());

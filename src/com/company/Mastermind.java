@@ -22,7 +22,6 @@ public class Mastermind {
     protected  int numberPresent;
     protected  int numberWellPositioned;
 
-    protected String argsRecovery;
     protected String answer;
     protected String parameter1;
     protected String parameter2;
@@ -35,14 +34,10 @@ public class Mastermind {
 
      public Mastermind(){}
 
-    ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/pain.jpg");
-    ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/happy.jpg");
-    ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/wrong_answer.jpg");
-
 
     public boolean systemMode(String[] args){
 
-         this.argsRecovery = String.valueOf(args);
+         this.systemMode = Boolean.getBoolean(String.valueOf(args));
 
          return this.systemMode;
     }
@@ -104,37 +99,39 @@ public class Mastermind {
 
          String[] options = {"CHALLENGER", "DEFENDER", "DUEL"};
          ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/game.jpg");
-        ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/rule.jpg");
+         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/rule.jpg");
+         ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/mr_cpu_angry.jpg");
+
 
 
          this.mode = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]);
 
 
          if (this.mode == 0) {
-             JOptionPane.showMessageDialog(null, "CHALLENGER MODE \nFIND MY SECRET COMBINATION\nGOOD LUCK !","MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "CHALLENGER MODE\nFIND MY SECRET COMBINATION\nGOOD LUCK !","MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 1) {
-             JOptionPane.showMessageDialog(null, "DEFENDER MODE \nI MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "DEFENDER MODE\nI MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 2) {
-             JOptionPane.showMessageDialog(null, "DUEL MODE \nTURN-BASED GAMES", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "DUEL MODE\nTURN-BASED\nFIND MY NUMBER\nGOOD LUCK !", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_03);
          }
 
          return this.mode;
     }
 
-    public String showRresult (int menu,int mode,int chance, String answer){
+    public String showRresult (int menu,int mode,int chance, Boolean systemMode) {
 
          this.menu = menu;
          this.mode = mode;
          this.chance = chance;
-         this.answer = answer;
+         this.systemMode = systemMode;
 
          ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mode.jpg");
 
-         if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
+        if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
 
              do {
                  try {
@@ -228,7 +225,17 @@ public class Mastermind {
          this.parameter2 = parameter2;
          this.name = name;
 
-         switch (this.mode){
+        ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/pain_brainy.jpg");
+        ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/happy_brainy.jpg");
+        ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/wrong_answer_brainy.jpg");
+        ImageIcon icon_04 = new ImageIcon("src/com/resources/picture/mr_cpu_pain.jpg");
+        ImageIcon icon_05 = new ImageIcon("src/com/resources/picture/mr_cpu_happy.jpg");
+        ImageIcon icon_06 = new ImageIcon("src/com/resources/picture/mr_cpu_wrong_answer.jpg");
+
+
+
+
+        switch (this.mode){
 
              case 0 :
 
@@ -263,13 +270,12 @@ public class Mastermind {
              case 2 :
 
                  if (this.parameter1.equals(this.parameter2)) {
-                     JOptionPane.showMessageDialog(null, "REFEREE: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     JOptionPane.showMessageDialog(null, "CPU: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_04);
                      Integer.toString(this.chance = 0);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "REFEREE: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
-                     if (this.mode == 2) { String.format("REFEREE WIN"); }
+                     JOptionPane.showMessageDialog(null, "CPU: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_05);
                  }else {
-                     JOptionPane.showMessageDialog(null, "REFEREE ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
+                     JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_06);
                      this.chance--;
                      System.out.println(String.format("chance: %s",this.chance));
                  }
@@ -277,37 +283,6 @@ public class Mastermind {
                  break;
          }
      }
-
-    /* GETTERS AND SETTERS */
-
-    public String getRandomNumber() {
-         return Integer.toString(this.randomNumber);
-    }
-
-    public void setRandomNumber(int randomNumber) {
-         this.randomNumber = randomNumber;
-    }
-
-    public String getName() {
-         return this.name;
-    }
-
-    public void setName(String name) {
-
-         ImageIcon icon = new ImageIcon("src/com/resources/picture/mastermind_menu.png");
-
-         this.name = name;
-
-         do {
-             if (this.name.length() > 15) {
-                 this.responseIsGood = false;
-                 JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon);
-                 this.createName();
-             } else this.responseIsGood = true;
-         } while (this.responseIsGood = false);
-
-    }
-
 }
 
 

@@ -1,5 +1,7 @@
 package com.company;
 
+import javax.swing.*;
+
 public class Getters extends Mastermind {
 
 
@@ -73,14 +75,6 @@ public class Getters extends Mastermind {
 
     public void setNumberCase(int numberCase) { this.numberCase = numberCase; }
 
-    public String getArgsRecovery() {
-        return argsRecovery;
-    }
-
-    public void setArgsRecovery(String argsRecovery) {
-        this.argsRecovery = argsRecovery;
-    }
-
     public String getParameter1() {
         return parameter1;
     }
@@ -120,4 +114,38 @@ public class Getters extends Mastermind {
     }
 
 
+    public String getRandomNumber() {
+        return Integer.toString(this.randomNumber);
+    }
+
+    public void setRandomNumber(int randomNumber) {
+        this.randomNumber = randomNumber;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+
+        ImageIcon icon = new ImageIcon("src/com/resources/picture/mastermind_menu.png");
+
+        this.name = name;
+
+        do {
+            if (this.name.length() > 15) {
+                this.responseIsGood = false;
+                JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon);
+                this.createName();
+            } else this.responseIsGood = true;
+        } while (this.responseIsGood = false);
+    }
+
+    public Boolean getSystemMode() {
+        return systemMode;
+    }
+
+    public void setSystemMode(Boolean systemMode) {
+        this.systemMode = systemMode;
+    }
 }

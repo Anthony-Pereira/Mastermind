@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d26a1b-6353-4ab2-af7c-403d777bb286" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/company/Getters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/company/Getters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/company/Mastermind.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/company/Mastermind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/resources/Config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/game.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/game.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/good_bye.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/good_bye.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/happy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/pain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mastermind/com/resources/picture/wrong_answer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Getters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Getters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/happy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/resources/picture/happy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Mastermind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Mastermind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/resources/Config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/game.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/resources/picture/game.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/good_bye.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/resources/picture/good_bye.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/happy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/pain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/resources/picture/wrong_answer.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,14 +82,14 @@
     <session id="-1025654254">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10087" />
-          <entry key="properties" value="15" />
+          <entry key="java" value="11439" />
+          <entry key="properties" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10087" />
-          <entry key="Properties" value="15" />
+          <entry key="JAVA" value="11439" />
+          <entry key="Properties" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -80,19 +97,19 @@
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="4" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.8" value="5" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="11" />
+          <entry key="java" value="13" />
           <entry key="properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="JAVA" value="13" />
           <entry key="Properties" value="1" />
         </counts>
       </usages-collector>
@@ -106,8 +123,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+            <state relative-caret-position="384">
+              <caret line="78" column="83" selection-start-line="78" selection-start-column="83" selection-end-line="78" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,16 +135,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Mastermind.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2854">
-              <caret line="105" column="74" selection-start-line="105" selection-start-column="74" selection-end-line="105" selection-end-column="74" />
+            <state relative-caret-position="1320">
+              <caret line="118" column="59" lean-forward="true" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12538#12539#0" expanded="true" />
-                <element signature="e#12598#12599#0" expanded="true" />
-                <element signature="e#12652#12653#0" expanded="true" />
-                <element signature="e#12702#12703#0" expanded="true" />
-                <element signature="e#12734#12735#0" expanded="true" />
-                <element signature="e#12768#12769#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,61 +147,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Getters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding>
-                <element signature="e#115#116#0" expanded="true" />
-                <element signature="e#153#154#0" expanded="true" />
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#216#217#0" expanded="true" />
-                <element signature="e#250#251#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#322#323#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-                <element signature="e#921#922#0" expanded="true" />
-                <element signature="e#952#953#0" expanded="true" />
-                <element signature="e#1049#1050#0" expanded="true" />
-                <element signature="e#1080#1081#0" expanded="true" />
-                <element signature="e#1122#1123#0" expanded="true" />
-                <element signature="e#1160#1161#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1236#1237#0" expanded="true" />
-                <element signature="e#1368#1369#0" expanded="true" />
-                <element signature="e#1406#1407#0" expanded="true" />
-                <element signature="e#1535#1536#0" expanded="true" />
-                <element signature="e#1570#1571#0" expanded="true" />
-                <element signature="e#1691#1692#0" expanded="true" />
-                <element signature="e#1726#1727#0" expanded="true" />
-                <element signature="e#1782#1783#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
-                <element signature="e#1867#1868#0" expanded="true" />
-                <element signature="e#1900#1901#0" expanded="true" />
-                <element signature="e#1952#1953#0" expanded="true" />
-                <element signature="e#1996#1997#0" expanded="true" />
-                <element signature="e#2033#2034#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2118#2119#0" expanded="true" />
-                <element signature="e#2162#2163#0" expanded="true" />
-                <element signature="e#2202#2203#0" expanded="true" />
-                <element signature="e#2238#2239#0" expanded="true" />
-                <element signature="e#2366#2367#0" expanded="true" />
-                <element signature="e#2397#2398#0" expanded="true" />
-                <element signature="e#2442#2443#0" expanded="true" />
-                <element signature="e#2482#2483#0" expanded="true" />
-                <element signature="e#2524#2525#0" expanded="true" />
-                <element signature="e#2561#2562#0" expanded="true" />
-                <element signature="e#2622#2623#0" expanded="true" />
-                <element signature="e#2674#2675#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="734">
+              <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -198,8 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/resources/Config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -221,8 +179,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -281,11 +239,11 @@
         <option value="$PROJECT_DIR$/src/com/company/DUEL.java" />
         <option value="$PROJECT_DIR$/src/com/company/Challenger.java" />
         <option value="$PROJECT_DIR$/src/com/company/Defender.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Duel.java" />
         <option value="$PROJECT_DIR$/src/com/company/Configuration.java" />
         <option value="$PROJECT_DIR$/src/com/company/Window.java" />
-        <option value="$PROJECT_DIR$/src/com/resources/Config.properties" />
         <option value="$PROJECT_DIR$/src/com/company/Getters.java" />
+        <option value="$PROJECT_DIR$/src/com/resources/Config.properties" />
+        <option value="$PROJECT_DIR$/src/com/company/Duel.java" />
         <option value="$PROJECT_DIR$/src/com/company/Mastermind.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
@@ -297,7 +255,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -308,9 +266,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -334,7 +291,7 @@
               <item name="mastermind" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mastermind" type="b2602c69:ProjectViewProjectNode" />
@@ -342,16 +299,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="picture" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555340198334" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555513523829" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/company/Main.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -430,7 +387,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49386084" visible="true" weight="0.046375267" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49386084" visible="true" weight="0.13752665" />
       <window_info id="Structure" order="1" sideWeight="0.50613916" side_tool="true" weight="0.042643923" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -439,7 +396,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5021692" side_tool="true" weight="0.16577825" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.47547975" visible="true" weight="0.06399132" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.47547975" visible="true" weight="0.28741866" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -455,7 +412,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.018656716" />
+      <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.013326226" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -517,7 +474,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/GameEnigma.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Challenger.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Defender.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Duel.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Formatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42653">
@@ -532,13 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="614" selection-start-line="614" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -547,6 +496,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Window.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/resources/Config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Getters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Duel.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -557,93 +530,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/resources/Config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Getters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <element signature="e#115#116#0" expanded="true" />
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#216#217#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#921#922#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1368#1369#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1867#1868#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
-            <element signature="e#1996#1997#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2118#2119#0" expanded="true" />
-            <element signature="e#2162#2163#0" expanded="true" />
-            <element signature="e#2202#2203#0" expanded="true" />
-            <element signature="e#2238#2239#0" expanded="true" />
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2442#2443#0" expanded="true" />
-            <element signature="e#2482#2483#0" expanded="true" />
-            <element signature="e#2524#2525#0" expanded="true" />
-            <element signature="e#2561#2562#0" expanded="true" />
-            <element signature="e#2622#2623#0" expanded="true" />
-            <element signature="e#2674#2675#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Mastermind.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2854">
-          <caret line="105" column="74" selection-start-line="105" selection-start-column="74" selection-end-line="105" selection-end-column="74" />
+        <state relative-caret-position="1320">
+          <caret line="118" column="59" lean-forward="true" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12538#12539#0" expanded="true" />
-            <element signature="e#12598#12599#0" expanded="true" />
-            <element signature="e#12652#12653#0" expanded="true" />
-            <element signature="e#12702#12703#0" expanded="true" />
-            <element signature="e#12734#12735#0" expanded="true" />
-            <element signature="e#12768#12769#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+        <state relative-caret-position="384">
+          <caret line="78" column="83" selection-start-line="78" selection-start-column="83" selection-end-line="78" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

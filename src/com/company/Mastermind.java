@@ -25,14 +25,16 @@ public class Mastermind {
     protected String answer;
     protected String parameter1;
     protected String parameter2;
-    protected String playerNumber="???";
+    protected String playerNumber;
     protected String brainyNumber;
     protected String mrCpuNumber;
-    protected String arrayClue="";
+    protected String arrayClue;
     protected String name;
     protected String dialogueReturn = "error";
 
      public Mastermind(){
+
+         this.playerNumber = "???";
          this.arrayClue = "???";
          this.numberWellPositioned = 0;
          this.numberPresent = 0;
@@ -286,6 +288,21 @@ public class Mastermind {
                  break;
          }
      }
+
+    public void reset () throws IOException {
+
+        Properties p = new Properties();
+        InputStream is = new FileInputStream("src/com/resources/Config.properties");
+        p.load(is);
+
+         this.numberCase = Integer.parseInt(p.getProperty("numberCase"));
+         this.chance = Integer.parseInt(p.getProperty("chance"));
+         this.playerNumber = "???";
+         this.arrayClue = "???";
+         this.numberWellPositioned = 0;
+         this.numberPresent = 0;
+    }
+
 }
 
 

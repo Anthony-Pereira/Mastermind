@@ -32,7 +32,11 @@ public class Mastermind {
     protected String name;
     protected String dialogueReturn = "error";
 
-     public Mastermind(){ }
+     public Mastermind(){
+         this.arrayClue = "???";
+         this.numberWellPositioned = 0;
+         this.numberPresent = 0;
+     }
 
     public boolean systemMode(String[] args){
 

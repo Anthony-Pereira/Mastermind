@@ -4,6 +4,16 @@ import javax.swing.*;
 
 public class Getters extends Mastermind {
 
+    public Getters(){
+        super();
+    }
+
+    public Getters(String name, int chance, String parameter1){
+        this.name = name;
+        this.chance = chance;
+        this.parameter1 = parameter1;
+    }
+
 
     public int getMode() {
         return this.mode;

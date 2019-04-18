@@ -32,8 +32,7 @@ public class Mastermind {
     protected String name;
     protected String dialogueReturn = "error";
 
-     public Mastermind(){}
-
+     public Mastermind(){ }
 
     public boolean systemMode(String[] args){
 

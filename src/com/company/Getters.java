@@ -1,6 +1,10 @@
 package com.company;
 
 import javax.swing.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class Getters extends Mastermind {
 
@@ -148,20 +152,22 @@ public class Getters extends Mastermind {
         return this.name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws IOException {
 
-        ImageIcon icon = new ImageIcon("src/com/resources/picture/mastermind_menu.png");
+        Properties p = new Properties();
+        InputStream is = new FileInputStream("src/com/resources/Config.properties");
+        p.load(is);
 
-        this.name = name;
+        ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/invalid_input.jpg");
 
-        do {
-            if (this.name.length() > 15) {
-                this.responseIsGood = false;
-                JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon);
-                this.createName();
-            } else this.responseIsGood = true;
-        } while (this.responseIsGood = false);
-    }
+    do {
+            if (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi"))) {
+                JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
+            } else this.name = name;
+            this.createName();
+    } while (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi")));
+
+}
 
     public Boolean getSystemMode() {
         return this.systemMode;

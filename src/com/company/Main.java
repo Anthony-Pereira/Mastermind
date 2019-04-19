@@ -15,6 +15,7 @@ public class Main {
         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/main_menu.jpg");
         ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/good_bye.jpg");
         ImageIcon icon_04 = new ImageIcon("src/com/resources/picture/your_number_is.jpg");
+        ImageIcon icon_05 = new ImageIcon("src/com/resources/picture/super_brainy.jpg");
 
         String[] options = {"YES", "NO"};
 
@@ -36,8 +37,9 @@ public class Main {
                         do {
                             player.reset();
                             ((Getters) brainy).setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
-                            System.out.println("Brainy number is: " + ((Getters) brainy).getBrainyNumber());
+                            mastermind.setAnswer(((Getters) brainy).getBrainyNumber());
                             do {
+                                if (mastermind.getSystemMode() == true) JOptionPane.showMessageDialog(null, "ANSWER: "+mastermind.getAnswer(),"MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE,icon_05);
                                 ((Getters) player).setPlayerNumber(player.showRresult(mastermind.getMenu(), mastermind.getMode(),((Getters) player).getChance(),mastermind.getSystemMode()));
                                 player.dialogue(mastermind.getMode(),((Getters) player).getPlayerNumber(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getName());
                                 player.logic(mastermind.getMode(), mastermind.getNumberCase(),((Getters) player).getPlayerNumber(), ((Getters) brainy).getBrainyNumber());
@@ -51,7 +53,9 @@ public class Main {
                             brainy.reset();
                             ((Getters) brainy).setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             ((Getters) player).setPlayerNumber(JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\n", p.getProperty("numberCase"))));
+                            mastermind.setAnswer(((Getters) player).getPlayerNumber());
                             do {
+                                if (mastermind.getSystemMode() == true) JOptionPane.showMessageDialog(null, "ANSWER: "+mastermind.getAnswer(),"MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE,icon_05);
                                 JOptionPane.showMessageDialog(null, "DIFFICULTY: "+p.getProperty("numberCase")+"\nCHANCE: "+((Getters) brainy).getChance()+"\nBRAINY: YOU'RE NUMBER IS "+((Getters) brainy).getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                 brainy.dialogue(mastermind.getMode(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getPlayerNumber(),((Getters) brainy).getName());
                                 brainy.logic(mastermind.getMode(), mastermind.getNumberCase(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getPlayerNumber());
@@ -69,8 +73,11 @@ public class Main {
 
                             player.reset();
                             brainy.reset();
+
+                            mastermind.setAnswer(mastermind.getMrCpuNumber());
                             do {
                                 do {
+                                    if (mastermind.getSystemMode() == true) JOptionPane.showMessageDialog(null, "ANSWER: "+mastermind.getAnswer(),"MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE,icon_05);
                                     ((Getters) player).setPlayerNumber(player.showRresult(mastermind.getMenu(), mastermind.getMode(),((Getters) player).getChance(),mastermind.getSystemMode()));
                                     player.dialogue(mastermind.getMode(),((Getters) player).getPlayerNumber(), mastermind.getMrCpuNumber(), ((Getters) player).getName());
                                     player.logic(mastermind.getMode(), mastermind.getNumberCase(),((Getters) player).getPlayerNumber(), mastermind.getMrCpuNumber());

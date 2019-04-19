@@ -170,4 +170,8 @@ public class Getters extends Mastermind {
     public Boolean getSystemMode() { return this.systemMode; }
 
     public void setSystemMode(Boolean systemMode) { this.systemMode = systemMode; }
+
+    public String getAnswer() { return answer; }
+
+    public void setAnswer(String answer) { this.answer = answer; }
 }

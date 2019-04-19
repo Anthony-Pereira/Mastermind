@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class Mastermind {
 
-    protected Boolean systemMode = false;
+    protected Boolean systemMode;
     protected Boolean responseIsGood = true;
 
     protected  int menu;
@@ -42,7 +42,9 @@ public class Mastermind {
 
     public boolean systemMode(String[] args){
 
-         this.systemMode = Boolean.getBoolean(String.valueOf(args));
+         this.systemMode = false;
+         this.systemMode = Boolean.valueOf(String.valueOf(args));
+        System.out.println("system mode = "+this.systemMode);
 
          return this.systemMode;
     }
@@ -144,8 +146,6 @@ public class Mastermind {
          } else {
              previousNumber = this.playerNumber;
          }
-
-        if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
 
         switch (this.menu){
 

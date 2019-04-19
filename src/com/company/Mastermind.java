@@ -126,22 +126,32 @@ public class Mastermind {
          return this.mode;
     }
 
-    public String showRresult (int menu,int mode,int chance, Boolean systemMode) {
+    public String showRresult (int menu,int mode,int chance, Boolean systemMode) throws IOException {
+
+        Properties p = new Properties();
+        InputStream is = new FileInputStream("src/com/resources/Config.properties");
+        p.load(is);
 
          this.menu = menu;
          this.mode = mode;
          this.chance = chance;
          this.systemMode = systemMode;
 
-         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mode.jpg");
+         String previousNumber;
+
+         if (this.playerNumber.length() != Integer.parseInt(p.getProperty("numberCase"))){
+             previousNumber = "???";
+         } else {
+             previousNumber = this.playerNumber;
+         }
 
         if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
 
         switch (this.menu){
 
-            case 0 : this.playerNumber = JOptionPane.showInputDialog(null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.arrayClue)));
+            case 0 : this.playerNumber = JOptionPane.showInputDialog(null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ", this.numberCase, this.chance, this.name.toUpperCase(), previousNumber, this.arrayClue)));
             break;
-            case 1 : this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.numberWellPositioned, this.numberPresent));
+            case 1 : this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), previousNumber, this.numberWellPositioned, this.numberPresent));
             break;
         }
 
@@ -292,7 +302,6 @@ public class Mastermind {
          this.numberWellPositioned = 0;
          this.numberPresent = 0;
     }
-
 }
 
 

@@ -37,9 +37,8 @@ public class Main {
                             player.reset();
                             ((Getters) brainy).setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             System.out.println("Brainy number is: " + ((Getters) brainy).getBrainyNumber());
-
                             do {
-                                player.showRresult(mastermind.getMenu(), mastermind.getMode(),((Getters) player).getChance(),mastermind.getSystemMode());
+                                ((Getters) player).setPlayerNumber(player.showRresult(mastermind.getMenu(), mastermind.getMode(),((Getters) player).getChance(),mastermind.getSystemMode()));
                                 player.dialogue(mastermind.getMode(),((Getters) player).getPlayerNumber(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getName());
                                 player.logic(mastermind.getMode(), mastermind.getNumberCase(),((Getters) player).getPlayerNumber(), ((Getters) brainy).getBrainyNumber());
                             } while (((Getters) player).getChance() != 0);
@@ -58,16 +57,11 @@ public class Main {
                                 brainy.logic(mastermind.getMode(), mastermind.getNumberCase(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getPlayerNumber());
                             } while (((Getters) brainy).getChance() != 0);
                             mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
-
                         } while (mastermind.getReplay() == 0);
                         break;
 
                     case 2:
                         do {
-                            //((Getters) player).setNumberCase(Integer.parseInt(p.getProperty("numberCase")));
-                            //((Getters) player).setChance(Integer.parseInt(p.getProperty("chance")));
-                            //((Getters) brainy).setChance(Integer.parseInt(p.getProperty("chance")));
-
                             ((Getters) brainy).setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             mastermind.setMrCpuNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                             System.out.println("Mr CPU number is: " + mastermind.getMrCpuNumber());
@@ -77,7 +71,7 @@ public class Main {
                             brainy.reset();
                             do {
                                 do {
-                                    player.showRresult(mastermind.getMenu(), mastermind.getMode(),((Getters) player).getChance(),mastermind.getSystemMode());
+                                    ((Getters) player).setPlayerNumber(player.showRresult(mastermind.getMenu(), mastermind.getMode(),((Getters) player).getChance(),mastermind.getSystemMode()));
                                     player.dialogue(mastermind.getMode(),((Getters) player).getPlayerNumber(), mastermind.getMrCpuNumber(), ((Getters) player).getName());
                                     player.logic(mastermind.getMode(), mastermind.getNumberCase(),((Getters) player).getPlayerNumber(), mastermind.getMrCpuNumber());
                                     if (((Getters) player).getChance() != 0) { break; }

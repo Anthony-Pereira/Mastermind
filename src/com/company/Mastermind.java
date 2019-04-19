@@ -81,7 +81,6 @@ public class Mastermind {
 
              JOptionPane.showMessageDialog(null, null, "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
              JOptionPane.showMessageDialog(null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
-
     }
 
     public int menu () {
@@ -138,16 +137,13 @@ public class Mastermind {
 
         if (this.systemMode) JOptionPane.showMessageDialog(null, String.format("\n\n*** ANSWER *** : %s\n\n", answer));
 
-             do {
-                 try {
-                     if (this.menu == 0) {this.playerNumber = JOptionPane.showInputDialog(null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.arrayClue)));}
-                     else if (this.menu == 1) {this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.numberWellPositioned, this.numberPresent));}
-                     responseIsGood = true;
-                 } catch (Exception e) {
-                     JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
-                     responseIsGood = false;
-                 }
-             } while (!this.responseIsGood);
+        switch (this.menu){
+
+            case 0 : this.playerNumber = JOptionPane.showInputDialog(null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.arrayClue)));
+            break;
+            case 1 : this.playerNumber = JOptionPane.showInputDialog(null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ", this.numberCase, this.chance, this.name.toUpperCase(), this.playerNumber, this.numberWellPositioned, this.numberPresent));
+            break;
+        }
 
          return this.playerNumber;
     }
@@ -237,9 +233,6 @@ public class Mastermind {
         ImageIcon icon_05 = new ImageIcon("src/com/resources/picture/mr_cpu_happy.jpg");
         ImageIcon icon_06 = new ImageIcon("src/com/resources/picture/mr_cpu_wrong_answer.jpg");
 
-
-
-
         switch (this.mode){
 
              case 0 :
@@ -254,7 +247,6 @@ public class Mastermind {
                      this.chance--;
                      System.out.println(String.format("chance: %s",this.chance));
                  }
-
                  break;
 
              case 1 :
@@ -269,7 +261,6 @@ public class Mastermind {
                      this.chance--;
                      System.out.println(String.format("chance: %s",this.chance));
                  }
-
                  break;
 
              case 2 :
@@ -284,7 +275,6 @@ public class Mastermind {
                      this.chance--;
                      System.out.println(String.format("chance: %s",this.chance));
                  }
-
                  break;
          }
      }

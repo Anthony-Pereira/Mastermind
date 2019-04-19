@@ -39,13 +39,23 @@ public class Getters extends Mastermind {
         return this.playerNumber;
     }
 
-    public void setPlayerNumber(String playerNumber) {
-        this.playerNumber = playerNumber;
+    public void setPlayerNumber(String playerNumber) throws IOException {
+
+        Properties p = new Properties();
+        InputStream is = new FileInputStream("src/com/resources/Config.properties");
+        p.load(is);
+
+        ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/invalid_input.jpg");
+
+        do {
+            if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase"))) {
+                JOptionPane.showMessageDialog(null, "INVALID NUMBER", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
+                this.showRresult(menu,mode,chance,systemMode);
+            } else this.playerNumber = playerNumber;
+        } while (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")));
     }
 
-    public String getBrainyNumber() {
-        return this.brainyNumber;
-    }
+    public String getBrainyNumber() { return this.brainyNumber; }
 
     public void setBrainyNumber(String computerNumber) {
         this.brainyNumber = computerNumber;
@@ -63,9 +73,7 @@ public class Getters extends Mastermind {
         return chance;
     }
 
-    public void setChance(int chance) {
-        this.chance = chance;
-    }
+    public void setChance(int chance) { this.chance = chance; }
 
     public int getReplay() {
         return replay;
@@ -79,25 +87,19 @@ public class Getters extends Mastermind {
         return minimumNumber;
     }
 
-    public void setMinimumNumber(int minimumNumber) {
-        this.minimumNumber = minimumNumber;
-    }
+    public void setMinimumNumber(int minimumNumber) { this.minimumNumber = minimumNumber; }
 
     public int getMaximumNumber() {
         return maximumNumber;
     }
 
-    public void setMaximumNumber(int maximumNumber) {
-        this.maximumNumber = maximumNumber;
-    }
+    public void setMaximumNumber(int maximumNumber) { this.maximumNumber = maximumNumber; }
 
     public int getNumberCase() {
         return numberCase;
     }
 
-    public void setNumberCase(int numberCase) {
-        this.numberCase = numberCase;
-    }
+    public void setNumberCase(int numberCase) { this.numberCase = numberCase; }
 
     public String getParameter1() {
         return parameter1;
@@ -119,9 +121,7 @@ public class Getters extends Mastermind {
         return mrCpuNumber;
     }
 
-    public void setMrCpuNumber(String refereeNumber) {
-        this.mrCpuNumber = refereeNumber;
-    }
+    public void setMrCpuNumber(String refereeNumber) { this.mrCpuNumber = refereeNumber; }
 
     public int getMainMenu() {
         return mainMenu;
@@ -138,7 +138,6 @@ public class Getters extends Mastermind {
     public void setResponseIsGood(Boolean responseIsGood) {
         this.responseIsGood = responseIsGood;
     }
-
 
     public String getRandomNumber() {
         return Integer.toString(this.randomNumber);
@@ -160,20 +159,15 @@ public class Getters extends Mastermind {
 
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/invalid_input.jpg");
 
-    do {
+        do {
             if (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi"))) {
                 JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
+                this.createName();
             } else this.name = name;
-            this.createName();
-    } while (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi")));
-
-}
-
-    public Boolean getSystemMode() {
-        return this.systemMode;
+        } while (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi")));
     }
 
-    public void setSystemMode(Boolean systemMode) {
-        this.systemMode = systemMode;
-    }
+    public Boolean getSystemMode() { return this.systemMode; }
+
+    public void setSystemMode(Boolean systemMode) { this.systemMode = systemMode; }
 }

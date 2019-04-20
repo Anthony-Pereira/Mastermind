@@ -12,7 +12,12 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        logger.debug("This is Debug");
+        logger.trace("trace");
+        logger.debug("debug");
+        logger.info("info");
+        logger.warn("warn");
+        logger.error("error");
+        logger.fatal("fatal");
 
         Getters mastermind = new Getters();
         Mastermind player = new Getters(mastermind.name,mastermind.getChance(),mastermind.getPlayerNumber());

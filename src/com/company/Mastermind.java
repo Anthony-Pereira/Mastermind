@@ -3,8 +3,12 @@ package com.company;
 import javax.swing.*;
 import java.io.*;
 import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Mastermind {
+
+    static final Logger logger = LogManager.getLogger();
 
     protected Boolean systemMode;
     protected Boolean responseIsGood = true;

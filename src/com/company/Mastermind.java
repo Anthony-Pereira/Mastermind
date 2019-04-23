@@ -253,9 +253,10 @@ public class Mastermind {
 
                  if (this.parameter1.equals(this.parameter2)) {
                      JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+ " , YOU WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
-                     Integer.toString(this.chance = 0);
+                     Integer.toString(this.chance = -1);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                     JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                     Integer.toString(this.chance = -1);
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
                      this.chance--;
@@ -266,10 +267,11 @@ public class Mastermind {
              case 1 :
 
                  if (this.parameter1.equals(this.parameter2)) {
-                     JOptionPane.showMessageDialog(null, "BRAINY: YEAH !!! I WON !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
-                     Integer.toString(this.chance = 0);
+                     JOptionPane.showMessageDialog(null, "BRAINY: YEAH !!! I WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                     Integer.toString(this.chance = -1);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "BRAINY: I DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nI LOST\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     JOptionPane.showMessageDialog(null, "BRAINY: I DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter2+"\nYOU WIN\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     Integer.toString(this.chance = -1);
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
                      this.chance--;
@@ -281,9 +283,10 @@ public class Mastermind {
 
                  if (this.parameter1.equals(this.parameter2)) {
                      JOptionPane.showMessageDialog(null, "CPU: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_04);
-                     Integer.toString(this.chance = 0);
+                     Integer.toString(this.chance = -1);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "CPU: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter1+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_05);
+                     JOptionPane.showMessageDialog(null, "CPU: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_05);
+                     Integer.toString(this.chance = -1);
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_06);
                      this.chance--;

@@ -1,6 +1,0 @@
-2019-04-20 04:37:34.344 [main] TRACE com.company.Main - trace
-2019-04-20 04:37:34.344 [main] DEBUG com.company.Main - debug
-2019-04-20 04:37:34.344 [main] INFO  com.company.Main - info
-2019-04-20 04:37:34.344 [main] WARN  com.company.Main - warn
-2019-04-20 04:37:34.344 [main] ERROR com.company.Main - error
-2019-04-20 04:37:34.344 [main] FATAL com.company.Main - fatal

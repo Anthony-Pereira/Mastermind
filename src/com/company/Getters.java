@@ -54,7 +54,8 @@ public class Getters extends Mastermind {
         do {
             if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase"))) {
                 JOptionPane.showMessageDialog(null, "INVALID NUMBER", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
-                this.showRresult(menu,mode,chance,systemMode);
+                logger.error(String.format("typing error for the player's number"));
+                this.showRresult(menu,mode,chance);
             } else this.playerNumber = playerNumber;
         } while (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")));
     }
@@ -166,6 +167,7 @@ public class Getters extends Mastermind {
         do {
             if (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi"))) {
                 JOptionPane.showMessageDialog(null, "INVALID NAME", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
+                logger.error(String.format("typing error for the player's name"));
                 this.createName();
             } else this.name = name;
         } while (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi")));

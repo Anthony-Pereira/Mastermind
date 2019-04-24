@@ -48,7 +48,8 @@ public class Mastermind {
 
          this.systemMode = false;
          this.systemMode = Boolean.valueOf(String.valueOf(args));
-        System.out.println("system mode = "+this.systemMode);
+
+         logger.info(String.format("system mode = %s",this.systemMode));
 
          return this.systemMode;
     }
@@ -60,12 +61,14 @@ public class Mastermind {
          this.minimumNumber = (int) Math.pow(10, this.numberCase -1);
          this.maximumNumber = (int) Math.pow(10, this.numberCase) -1;
 
-         System.out.println(this.minimumNumber);
-         System.out.println(this.maximumNumber);
-
          this.randomNumber = this.minimumNumber + (int) (Math.random() * (this.maximumNumber - this.minimumNumber + 1));
 
-         return Integer.toString(randomNumber);
+         logger.info(String.format("number case = %s",this.numberCase));
+         logger.info(String.format("minimum number = %s",this.minimumNumber));
+         logger.info(String.format("maximum number = %s",this.maximumNumber));
+         logger.info(String.format("random number = %s",this.randomNumber));
+
+        return Integer.toString(randomNumber);
     }
 
     public String createName () {
@@ -73,7 +76,10 @@ public class Mastermind {
          ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/name.jpg");
 
          this.name = (String) JOptionPane.showInputDialog(null,"ENTER YOUR NAME","MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_01,null,"USER");
-         return this.name;
+
+         logger.info(String.format("username = %s",this.name));
+
+        return this.name;
     }
 
     public void introduction () throws IOException {
@@ -95,6 +101,8 @@ public class Mastermind {
          ImageIcon icon = new ImageIcon("src/com/resources/picture/mode.jpg");
 
          this.menu = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
+
+         logger.warn(String.format("menu choice = %s",this.menu));
 
          return this.menu;
     }
@@ -129,10 +137,13 @@ public class Mastermind {
              JOptionPane.showMessageDialog(null, "DUEL MODE\nTURN-BASED\nFIND MY NUMBER\nGOOD LUCK !", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_03);
          }
 
-         return this.mode;
+        logger.info(String.format("menu choice = %s",this.menu));
+        logger.warn(String.format("game choice = %s",this.mode));
+
+        return this.mode;
     }
 
-    public String showRresult (int menu,int mode,int chance, Boolean systemMode) throws IOException {
+    public String showRresult (int menu,int mode,int chance) throws IOException {
 
         Properties p = new Properties();
         InputStream is = new FileInputStream("src/com/resources/Config.properties");
@@ -141,14 +152,15 @@ public class Mastermind {
          this.menu = menu;
          this.mode = mode;
          this.chance = chance;
-         this.systemMode = systemMode;
 
          String previousNumber;
 
          if (this.playerNumber.length() != Integer.parseInt(p.getProperty("numberCase"))){
              previousNumber = "???";
+             logger.error(String.format("typing error previous number = %s",previousNumber));
          } else {
              previousNumber = this.playerNumber;
+             logger.info(String.format("good seizure previous number = %s",previousNumber));
          }
 
         switch (this.menu){
@@ -159,7 +171,18 @@ public class Mastermind {
             break;
         }
 
-         return this.playerNumber;
+        logger.info(String.format("menu choice = %s",this.menu));
+        logger.info(String.format("game choice = %s",this.mode));
+        logger.info(String.format("number case = %s",this.numberCase));
+        logger.info(String.format("chance = %s",this.chance));
+        logger.info(String.format("name = %s",this.name));
+        logger.warn(String.format("previous number = %s",previousNumber));
+        logger.warn(String.format("player number = %s",this.playerNumber));
+        logger.warn(String.format("array clue = %s",this.arrayClue));
+        logger.warn(String.format("number well positioned = %s",this.numberWellPositioned));
+        logger.warn(String.format("number present = %s",this.numberPresent));
+
+        return this.playerNumber;
     }
 
     public void logic (int mode,int numberCase, String parameter1, String parameter2) throws IOException {
@@ -208,9 +231,10 @@ public class Mastermind {
                  cases[i] = 1;
              }
              this.brainyNumber+=Integer.toString(arrayIndex[i]);
-             System.out.println(String.format("parameter 1: %s", this.parameter1));
-             System.out.println(String.format("parameter 2: %s", this.parameter2));
-             System.out.println(String.format("Le nombre de la colonne %s est: %s et deviens %s .",i,parameter1.charAt(i),arrayIndex[i]));
+
+             logger.info(String.format("game choice = %s",this.mode));
+             logger.info(String.format("number case = %s",this.numberCase));
+             logger.warn(String.format("number column %s = %s is becoming %s ",i,parameter1.charAt(i),arrayIndex[i]));
          }
 
          for (char total : arrayClue) {
@@ -228,9 +252,9 @@ public class Mastermind {
          for (int total: arrayIndex) {
              this.parameter1 += total;
          }
-         System.out.println("clue : " + this.arrayClue);
-         System.out.println( "number well positioned : " + this.numberWellPositioned);
-         System.out.println("number present : " + this.numberPresent);
+         logger.warn(String.format("array clue = %s",this.arrayClue));
+         logger.warn(String.format("number well positioned : ", this.numberWellPositioned));
+         logger.warn(String.format("number present : " ,this.numberPresent));
     }
 
     public void dialogue (int mode, String parameter1, String parameter2, String name) {
@@ -239,6 +263,9 @@ public class Mastermind {
          this.parameter1 = parameter1;
          this.parameter2 = parameter2;
          this.name = name;
+
+        logger.info(String.format("game choice = %s",this.mode));
+        logger.info(String.format("username = %s",this.name));
 
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/pain_brainy.jpg");
         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/happy_brainy.jpg");
@@ -260,8 +287,8 @@ public class Mastermind {
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
                      this.chance--;
-                     System.out.println(String.format("chance: %s",this.chance));
                  }
+                 logger.warn(String.format("chance = %s",this.chance));
                  break;
 
              case 1 :
@@ -275,8 +302,8 @@ public class Mastermind {
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
                      this.chance--;
-                     System.out.println(String.format("chance: %s",this.chance));
                  }
+                 logger.warn(String.format("chance = %s",this.chance));
                  break;
 
              case 2 :
@@ -290,11 +317,11 @@ public class Mastermind {
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_06);
                      this.chance--;
-                     System.out.println(String.format("chance: %s",this.chance));
                  }
+                 logger.warn(String.format("chance = %s",this.chance));
                  break;
          }
-     }
+    }
 
     public void reset () throws IOException {
 
@@ -308,6 +335,13 @@ public class Mastermind {
          this.arrayClue = "???";
          this.numberWellPositioned = 0;
          this.numberPresent = 0;
+
+        logger.warn(String.format("reset number case = %s",this.numberCase));
+        logger.warn(String.format("reset chance = ",this.chance));
+        logger.warn(String.format("reset player number = ",this.playerNumber));
+        logger.warn(String.format("reset array clue = %s",this.arrayClue));
+        logger.warn(String.format("reset number well positioned = %s",this.numberWellPositioned));
+        logger.warn(String.format("reset number present = %s",this.numberPresent));
     }
 }
 

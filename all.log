@@ -5,8 +5,8 @@
 2019-04-25 00:06:15.884 [main] WARN  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:15.885 [main] WARN  com.company.Main - system mode = false
 2019-04-25 00:06:15.886 [main] WARN  com.company.Mastermind - reset number case = 3
-2019-04-25 00:06:15.887 [main] WARN  com.company.Mastermind - reset chance = 
-2019-04-25 00:06:15.887 [main] WARN  com.company.Mastermind - reset player number = 
+2019-04-25 00:06:15.887 [main] WARN  com.company.Mastermind - reset chance =
+2019-04-25 00:06:15.887 [main] WARN  com.company.Mastermind - reset player number =
 2019-04-25 00:06:15.888 [main] WARN  com.company.Mastermind - reset array clue = ???
 2019-04-25 00:06:15.889 [main] WARN  com.company.Mastermind - reset number well positioned = 0
 2019-04-25 00:06:15.890 [main] WARN  com.company.Mastermind - reset number present = 0
@@ -31,16 +31,16 @@
 2019-04-25 00:06:20.479 [main] WARN  com.company.Mastermind - chance = 3
 2019-04-25 00:06:20.480 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:20.480 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:20.480 [main] WARN  com.company.Mastermind - number column 0 = 4 is becoming 5 
+2019-04-25 00:06:20.480 [main] WARN  com.company.Mastermind - number column 0 = 4 is becoming 5
 2019-04-25 00:06:20.481 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:20.481 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:20.481 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 4 
+2019-04-25 00:06:20.481 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 4
 2019-04-25 00:06:20.481 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:20.481 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - number column 2 = 6 is becoming 5 
+2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - number column 2 = 6 is becoming 5
 2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - array clue = +--
-2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:06:20.482 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:06:20.483 [main] INFO  com.company.Mastermind - good seizure previous number = 456
 2019-04-25 00:06:22.937 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:06:22.938 [main] INFO  com.company.Mastermind - game choice = 0
@@ -57,16 +57,16 @@
 2019-04-25 00:06:23.522 [main] WARN  com.company.Mastermind - chance = 2
 2019-04-25 00:06:23.523 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:23.523 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:23.524 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 7 
+2019-04-25 00:06:23.524 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 7
 2019-04-25 00:06:23.525 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:23.525 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:23.526 [main] WARN  com.company.Mastermind - number column 1 = 9 is becoming 8 
+2019-04-25 00:06:23.526 [main] WARN  com.company.Mastermind - number column 1 = 9 is becoming 8
 2019-04-25 00:06:23.527 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:23.528 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - number column 2 = 9 is becoming 8 
+2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - number column 2 = 9 is becoming 8
 2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - array clue = +--
-2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:06:23.529 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:06:23.530 [main] INFO  com.company.Mastermind - good seizure previous number = 699
 2019-04-25 00:06:28.487 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:06:28.488 [main] INFO  com.company.Mastermind - game choice = 0
@@ -119,16 +119,16 @@
 2019-04-25 00:06:49.207 [main] WARN  com.company.Mastermind - chance = 1
 2019-04-25 00:06:49.207 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:49.207 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:49.207 [main] WARN  com.company.Mastermind - number column 0 = 7 is becoming 8 
+2019-04-25 00:06:49.207 [main] WARN  com.company.Mastermind - number column 0 = 7 is becoming 8
 2019-04-25 00:06:49.207 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:49.207 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:49.208 [main] WARN  com.company.Mastermind - number column 1 = 8 is becoming 7 
+2019-04-25 00:06:49.208 [main] WARN  com.company.Mastermind - number column 1 = 8 is becoming 7
 2019-04-25 00:06:49.208 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:49.208 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:49.209 [main] WARN  com.company.Mastermind - number column 2 = 9 is becoming 8 
+2019-04-25 00:06:49.209 [main] WARN  com.company.Mastermind - number column 2 = 9 is becoming 8
 2019-04-25 00:06:49.210 [main] WARN  com.company.Mastermind - array clue = +--
-2019-04-25 00:06:49.210 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:06:49.210 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:06:49.210 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:06:49.210 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:06:49.211 [main] INFO  com.company.Mastermind - good seizure previous number = 789
 2019-04-25 00:06:52.091 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:06:52.092 [main] INFO  com.company.Mastermind - game choice = 0
@@ -145,31 +145,31 @@
 2019-04-25 00:06:52.310 [main] WARN  com.company.Mastermind - chance = 0
 2019-04-25 00:06:52.310 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:52.310 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:52.311 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 9 
+2019-04-25 00:06:52.311 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 9
 2019-04-25 00:06:52.311 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:52.311 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:52.311 [main] WARN  com.company.Mastermind - number column 1 = 4 is becoming 4 
+2019-04-25 00:06:52.311 [main] WARN  com.company.Mastermind - number column 1 = 4 is becoming 4
 2019-04-25 00:06:52.311 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:52.312 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:52.312 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 4 
+2019-04-25 00:06:52.312 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 4
 2019-04-25 00:06:52.312 [main] WARN  com.company.Mastermind - array clue = +==
-2019-04-25 00:06:52.312 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:06:52.313 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:06:52.312 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:06:52.313 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:06:52.313 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:52.314 [main] INFO  com.company.Mastermind - username = USER
 2019-04-25 00:06:54.390 [main] WARN  com.company.Mastermind - chance = -1
 2019-04-25 00:06:54.392 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:54.393 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:54.394 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 9 
+2019-04-25 00:06:54.394 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 9
 2019-04-25 00:06:54.396 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:54.396 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:54.397 [main] WARN  com.company.Mastermind - number column 1 = 4 is becoming 4 
+2019-04-25 00:06:54.397 [main] WARN  com.company.Mastermind - number column 1 = 4 is becoming 4
 2019-04-25 00:06:54.398 [main] INFO  com.company.Mastermind - game choice = 0
 2019-04-25 00:06:54.398 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:06:54.398 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 4 
+2019-04-25 00:06:54.398 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 4
 2019-04-25 00:06:54.399 [main] WARN  com.company.Mastermind - array clue = +==
-2019-04-25 00:06:54.399 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:06:54.400 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:06:54.399 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:06:54.400 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:06:58.886 [main] WARN  com.company.Main - replay = 1
 2019-04-25 00:07:01.087 [main] WARN  com.company.Main - main menu = 0
 2019-04-25 00:07:04.969 [main] WARN  com.company.Mastermind - menu choice = 0
@@ -187,14 +187,14 @@
 2019-04-25 00:07:08.203 [main] INFO  com.company.Mastermind - random number = 643
 2019-04-25 00:07:08.203 [main] WARN  com.company.Main - Mr CPU number = 643
 2019-04-25 00:07:08.204 [main] WARN  com.company.Mastermind - reset number case = 3
-2019-04-25 00:07:08.204 [main] WARN  com.company.Mastermind - reset chance = 
-2019-04-25 00:07:08.204 [main] WARN  com.company.Mastermind - reset player number = 
+2019-04-25 00:07:08.204 [main] WARN  com.company.Mastermind - reset chance =
+2019-04-25 00:07:08.204 [main] WARN  com.company.Mastermind - reset player number =
 2019-04-25 00:07:08.205 [main] WARN  com.company.Mastermind - reset array clue = ???
 2019-04-25 00:07:08.206 [main] WARN  com.company.Mastermind - reset number well positioned = 0
 2019-04-25 00:07:08.206 [main] WARN  com.company.Mastermind - reset number present = 0
 2019-04-25 00:07:08.207 [main] WARN  com.company.Mastermind - reset number case = 3
-2019-04-25 00:07:08.207 [main] WARN  com.company.Mastermind - reset chance = 
-2019-04-25 00:07:08.207 [main] WARN  com.company.Mastermind - reset player number = 
+2019-04-25 00:07:08.207 [main] WARN  com.company.Mastermind - reset chance =
+2019-04-25 00:07:08.207 [main] WARN  com.company.Mastermind - reset player number =
 2019-04-25 00:07:08.207 [main] WARN  com.company.Mastermind - reset array clue = ???
 2019-04-25 00:07:08.208 [main] WARN  com.company.Mastermind - reset number well positioned = 0
 2019-04-25 00:07:08.208 [main] WARN  com.company.Mastermind - reset number present = 0
@@ -214,31 +214,31 @@
 2019-04-25 00:07:15.925 [main] WARN  com.company.Mastermind - chance = 3
 2019-04-25 00:07:15.926 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:15.927 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:15.927 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 7 
+2019-04-25 00:07:15.927 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 7
 2019-04-25 00:07:15.927 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:15.927 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 4 
+2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 4
 2019-04-25 00:07:15.928 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:15.928 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 3 
+2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 3
 2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - array clue = ---
-2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:15.928 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:18.962 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:18.963 [main] INFO  com.company.Mastermind - username = Brainy
 2019-04-25 00:07:19.479 [main] WARN  com.company.Mastermind - chance = 3
 2019-04-25 00:07:19.480 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:19.481 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:19.482 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 7 
+2019-04-25 00:07:19.482 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 7
 2019-04-25 00:07:19.483 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:19.484 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:19.485 [main] WARN  com.company.Mastermind - number column 1 = 9 is becoming 8 
+2019-04-25 00:07:19.485 [main] WARN  com.company.Mastermind - number column 1 = 9 is becoming 8
 2019-04-25 00:07:19.486 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:19.487 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:19.489 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3 
+2019-04-25 00:07:19.489 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3
 2019-04-25 00:07:19.490 [main] WARN  com.company.Mastermind - array clue = --=
-2019-04-25 00:07:19.490 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:19.491 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:19.490 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:19.491 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:19.492 [main] INFO  com.company.Mastermind - good seizure previous number = 854
 2019-04-25 00:07:21.653 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:07:21.654 [main] INFO  com.company.Mastermind - game choice = 2
@@ -255,31 +255,31 @@
 2019-04-25 00:07:22.377 [main] WARN  com.company.Mastermind - chance = 2
 2019-04-25 00:07:22.378 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:22.379 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:22.379 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6 
+2019-04-25 00:07:22.379 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6
 2019-04-25 00:07:22.380 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:22.380 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:22.381 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 4 
+2019-04-25 00:07:22.381 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 4
 2019-04-25 00:07:22.381 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:22.381 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:22.382 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 3 
+2019-04-25 00:07:22.382 [main] WARN  com.company.Mastermind - number column 2 = 4 is becoming 3
 2019-04-25 00:07:22.382 [main] WARN  com.company.Mastermind - array clue = =--
-2019-04-25 00:07:22.384 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:22.384 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:22.384 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:22.384 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:25.871 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:25.871 [main] INFO  com.company.Mastermind - username = Brainy
 2019-04-25 00:07:26.224 [main] WARN  com.company.Mastermind - chance = 2
 2019-04-25 00:07:26.225 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:26.225 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:26.226 [main] WARN  com.company.Mastermind - number column 0 = 7 is becoming 6 
+2019-04-25 00:07:26.226 [main] WARN  com.company.Mastermind - number column 0 = 7 is becoming 6
 2019-04-25 00:07:26.226 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:26.227 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:26.227 [main] WARN  com.company.Mastermind - number column 1 = 8 is becoming 7 
+2019-04-25 00:07:26.227 [main] WARN  com.company.Mastermind - number column 1 = 8 is becoming 7
 2019-04-25 00:07:26.227 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:26.228 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:26.228 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3 
+2019-04-25 00:07:26.228 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3
 2019-04-25 00:07:26.228 [main] WARN  com.company.Mastermind - array clue = --=
-2019-04-25 00:07:26.229 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:26.229 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:26.229 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:26.229 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:26.230 [main] INFO  com.company.Mastermind - good seizure previous number = 654
 2019-04-25 00:07:32.256 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:07:32.256 [main] INFO  com.company.Mastermind - game choice = 2
@@ -296,31 +296,31 @@
 2019-04-25 00:07:32.873 [main] WARN  com.company.Mastermind - chance = 1
 2019-04-25 00:07:32.874 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:32.874 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:32.874 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6 
+2019-04-25 00:07:32.874 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6
 2019-04-25 00:07:32.874 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:32.874 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number column 1 = 3 is becoming 4 
+2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number column 1 = 3 is becoming 4
 2019-04-25 00:07:32.875 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:32.875 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3 
+2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3
 2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - array clue = =+=
-2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:32.875 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:34.600 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:34.600 [main] INFO  com.company.Mastermind - username = Brainy
 2019-04-25 00:07:35.190 [main] WARN  com.company.Mastermind - chance = 1
 2019-04-25 00:07:35.191 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:35.191 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:35.192 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6 
+2019-04-25 00:07:35.192 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6
 2019-04-25 00:07:35.192 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:35.192 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:35.193 [main] WARN  com.company.Mastermind - number column 1 = 7 is becoming 6 
+2019-04-25 00:07:35.193 [main] WARN  com.company.Mastermind - number column 1 = 7 is becoming 6
 2019-04-25 00:07:35.194 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:35.194 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:35.195 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3 
+2019-04-25 00:07:35.195 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3
 2019-04-25 00:07:35.197 [main] WARN  com.company.Mastermind - array clue = =-=
-2019-04-25 00:07:35.198 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:35.200 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:35.198 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:35.200 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:35.202 [main] INFO  com.company.Mastermind - good seizure previous number = 633
 2019-04-25 00:07:39.119 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:07:39.119 [main] INFO  com.company.Mastermind - game choice = 2
@@ -337,16 +337,16 @@
 2019-04-25 00:07:39.889 [main] WARN  com.company.Mastermind - chance = -1
 2019-04-25 00:07:39.890 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:39.890 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:39.890 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6 
+2019-04-25 00:07:39.890 [main] WARN  com.company.Mastermind - number column 0 = 6 is becoming 6
 2019-04-25 00:07:39.890 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:39.891 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:39.891 [main] WARN  com.company.Mastermind - number column 1 = 4 is becoming 4 
+2019-04-25 00:07:39.891 [main] WARN  com.company.Mastermind - number column 1 = 4 is becoming 4
 2019-04-25 00:07:39.891 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:39.891 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:39.891 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3 
+2019-04-25 00:07:39.891 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 3
 2019-04-25 00:07:39.894 [main] WARN  com.company.Mastermind - array clue = ===
-2019-04-25 00:07:39.895 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:39.895 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:39.895 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:39.895 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:43.599 [main] WARN  com.company.Main - replay = 0
 2019-04-25 00:07:43.599 [main] WARN  com.company.Main - system mode = false
 2019-04-25 00:07:43.600 [main] INFO  com.company.Mastermind - number case = 3
@@ -360,14 +360,14 @@
 2019-04-25 00:07:43.601 [main] INFO  com.company.Mastermind - random number = 358
 2019-04-25 00:07:43.601 [main] WARN  com.company.Main - Mr CPU number = 358
 2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset number case = 3
-2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset chance = 
-2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset player number = 
+2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset chance =
+2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset player number =
 2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset array clue = ???
 2019-04-25 00:07:43.602 [main] WARN  com.company.Mastermind - reset number well positioned = 0
 2019-04-25 00:07:43.603 [main] WARN  com.company.Mastermind - reset number present = 0
 2019-04-25 00:07:43.603 [main] WARN  com.company.Mastermind - reset number case = 3
-2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset chance = 
-2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset player number = 
+2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset chance =
+2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset player number =
 2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset array clue = ???
 2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset number well positioned = 0
 2019-04-25 00:07:43.604 [main] WARN  com.company.Mastermind - reset number present = 0
@@ -387,31 +387,31 @@
 2019-04-25 00:07:57.095 [main] WARN  com.company.Mastermind - chance = 3
 2019-04-25 00:07:57.096 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:57.096 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:57.096 [main] WARN  com.company.Mastermind - number column 0 = 3 is becoming 3 
+2019-04-25 00:07:57.096 [main] WARN  com.company.Mastermind - number column 0 = 3 is becoming 3
 2019-04-25 00:07:57.097 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:57.097 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:57.098 [main] WARN  com.company.Mastermind - number column 1 = 3 is becoming 4 
+2019-04-25 00:07:57.098 [main] WARN  com.company.Mastermind - number column 1 = 3 is becoming 4
 2019-04-25 00:07:57.098 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:57.098 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:57.099 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 4 
+2019-04-25 00:07:57.099 [main] WARN  com.company.Mastermind - number column 2 = 3 is becoming 4
 2019-04-25 00:07:57.099 [main] WARN  com.company.Mastermind - array clue = =++
-2019-04-25 00:07:57.100 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:57.100 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:57.100 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:57.100 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:58.457 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:58.457 [main] INFO  com.company.Mastermind - username = Brainy
 2019-04-25 00:07:58.978 [main] WARN  com.company.Mastermind - chance = 3
 2019-04-25 00:07:58.978 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:58.979 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 7 
+2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number column 0 = 8 is becoming 7
 2019-04-25 00:07:58.979 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:58.979 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number column 1 = 0 is becoming 1 
+2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number column 1 = 0 is becoming 1
 2019-04-25 00:07:58.979 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:07:58.979 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number column 2 = 5 is becoming 6 
+2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number column 2 = 5 is becoming 6
 2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - array clue = -++
-2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:07:58.979 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:07:58.980 [main] INFO  com.company.Mastermind - good seizure previous number = 333
 2019-04-25 00:08:02.330 [main] INFO  com.company.Mastermind - menu choice = 0
 2019-04-25 00:08:02.331 [main] INFO  com.company.Mastermind - game choice = 2
@@ -428,15 +428,15 @@
 2019-04-25 00:08:03.168 [main] WARN  com.company.Mastermind - chance = -1
 2019-04-25 00:08:03.169 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:08:03.169 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number column 0 = 3 is becoming 3 
+2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number column 0 = 3 is becoming 3
 2019-04-25 00:08:03.169 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:08:03.169 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 5 
+2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number column 1 = 5 is becoming 5
 2019-04-25 00:08:03.169 [main] INFO  com.company.Mastermind - game choice = 2
 2019-04-25 00:08:03.169 [main] INFO  com.company.Mastermind - number case = 3
-2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number column 2 = 8 is becoming 8 
+2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number column 2 = 8 is becoming 8
 2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - array clue = ===
-2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number well positioned : 
-2019-04-25 00:08:03.170 [main] WARN  com.company.Mastermind - number present : 
+2019-04-25 00:08:03.169 [main] WARN  com.company.Mastermind - number well positioned :
+2019-04-25 00:08:03.170 [main] WARN  com.company.Mastermind - number present :
 2019-04-25 00:08:05.360 [main] WARN  com.company.Main - replay = 1
 2019-04-25 00:08:07.647 [main] WARN  com.company.Main - main menu = 1

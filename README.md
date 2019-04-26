@@ -2,40 +2,42 @@
 
 											           PRESENTATION OF THE APPLICATION
 
-+/- MODE || MASTERMIND MODE
-
-2 in 1 APPLICATION:
+PUZZLE MODE || ENIGMA MODE:
 
 
-+/- MODE : 
+	2 in 1 APPLICATION:
 
-	Find the secret combination using the +/- data given by Mastermind: 
+		Puzzle mode : 
 
-		- search the good combination due to the answer you have. 
+			Find the secret combination using the +/- data given by Mastermind: 
 
-			- well placed (=) and misplaced (+ more than your number) (- less than your number).
+				- search the good combination due to the answer you have. 
 
-
-MASTERMIND MODE : 
-
-	Find the secret combination using the number well positioned and number present data given by Mastermind: 
-
-		- search the good combination due to the answer you have. 
-
-			- number well positioned: there are x number well positioned in your combination
-
-			- number present: there are x number present in your combination
+					- well placed (=) and misplaced (+ more than your number) (- less than your number).
 
 
-GAME MODE : 
+		Mastermind mode : 
 
-	Three game mode available : CHALLENGER,DEFENDER,DUEL
+			Find the secret combination using the number well positioned and number present data given by Mastermind: 
 
-		- Challenger : you must find the secret brainy combination
+				- search the good combination due to the answer you have. 
 
-		- Defender : Brainy must find your secret combination
+					- number well positioned: there are x number well positioned in your combination
 
-		- Duel : you and brainy are in competition, the first who will find the secret combination of Mr Computer will win.
+					- number present: there are x number present in your combination
+
+
+GAME MODE: 
+
+
+	Three game mode available: CHALLENGER,DEFENDER,DUEL
+
+		- Challenger: you must find the secret brainy combination
+
+		- Defender: Brainy must find your secret combination
+
+		- Duel: you and brainy are in competition, the first who will find the secret combination of Mr Computer will win.
+
 
 
 DIFFICULTY MODE:

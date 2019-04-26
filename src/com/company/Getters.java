@@ -51,8 +51,13 @@ public class Getters extends Mastermind {
 
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/invalid_input.jpg");
 
+        boolean regexPlayerNumber = this.playerNumber.matches("^[0-9]+$");
+
+        
+        logger.warn(String.format("player number -> numeric = %s",regexPlayerNumber));
+
         do {
-            if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase"))) {
+            if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")) || !regexPlayerNumber) {
                 JOptionPane.showMessageDialog(null, "INVALID NUMBER", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
                 logger.error(String.format("typing error for the player's number"));
                 this.showRresult(menu,mode,chance);

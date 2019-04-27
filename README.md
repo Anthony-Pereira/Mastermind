@@ -36,7 +36,7 @@ GAME MODE:
 
 		- Defender: Brainy must find your secret combination
 
-		- Duel: you and brainy are in competition, the first who will find the secret combination of Mr Computer will win.
+		- Duel: you and brainy are in competition, the first one who find the secret combination of Mr Computer win.
 
 
 

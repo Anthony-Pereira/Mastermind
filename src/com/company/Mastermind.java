@@ -6,35 +6,279 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * <b>Mastermind is the Class representating the Mastermind Game.</b>
+ * <p>
+ * this game is characterized by the following information:
+ * <ul>
+ *      <li>You can switch between the game and the developer mode</li>
+ *      <li>A variable who return if the result is true or false</li>
+ *      <li>A menu with two style mode</li>
+ *      <li>A menu with three games mode</li>
+ *      <li>A possibility to replay the games</li>
+ *      <li>A possibility to return on the main menu</li>
+ *      <li>A chance number defined by the user</li>
+ *      <li>A number case defined by the user</li>
+ *      <li>A random number defined by the random number method</li>
+ *      <li>A minimum number defined by the user</li>
+ *      <li>A maximum number defined by the user</li>
+ *      <li>A clue telling the user how many number are present in the user's game</li>
+ *      <li>A clue telling the user how many number are well positioned in the user's game</li>
+ *      <li>A given solution if the user is in developer mode</li>
+ *      <li>A useful parameter 1 for the comparison table</li>
+ *      <li>A useful parameter 2 for the comparison table</li>
+ *      <li>A number chosen by the player</li>
+ *      <li>A number chosen by brainy</li>
+ *      <li>A number chosen by Mr computer</li>
+ *      <li>A clues indicating each number if it is greater, inferior or equal to the result that the user must find</li>
+ *      <li>User can chose his name</li>
+ *      <li>A given solution if the user is in developer mode</li>
+ *      <li>Dialogues for interactivity </li>
+ * </ul>
+ * </p>
+ *
+ * @see Getters
+ *
+ * @author Anthony Pereira
+ * @version %I%, %G%
+ */
+
 public class Mastermind {
 
     static final Logger logger = LogManager.getLogger();
 
     protected Boolean systemMode;
+    /**
+     * System mode. This mode can be modified.
+     *
+     * @see Mastermind#systemMode(String[])
+     * @see Getters#getSystemMode()
+     */
+
     protected Boolean responseIsGood = true;
+    /**
+     * Result is true or false. This mode can be modified.
+    */
 
     protected  int menu;
+    /**
+     * Menu mode. This menu can be changed.
+     *
+     * @see Mastermind#menu()
+     * @see Getters#getMenu()
+     */
+
     protected  int mode;
+    /**
+     * Game mode. This menu can be changed.
+     *
+     * <p>
+     *      User chose one of three game.
+     * </p>
+     *
+     * @see Mastermind#games(int)
+     * @see Getters#getMode()
+     */
+
     protected  int replay;
+    /**
+     * <p>
+     *      At the end game, replay can be changed for restart a game party.
+     * </p>
+     *
+     * @see Getters#getReplay()
+     * @see Getters#setReplay(int)
+     */
+
     protected  int mainMenu;
+    /**
+     * <p>
+     *      If the game party it's not replayed, you can return at main menu.
+     * </p>
+     *
+     * @see Getters#getMainMenu()
+     * @see Getters#setMainMenu(int)
+     */
 
     protected  int chance;
+    /**
+     * number of chances to find the answer.
+     *
+     * <p>
+     *    Defined in the Config.properties file.
+     * </p>
+     *
+     * @see Mastermind#showRresult(int, int, int)
+     * @see Mastermind#dialogue(int, String, String, String)
+     * @see Mastermind#reset()
+     * @see Getters#getChance()
+     */
+
     protected  int numberCase;
+    /**
+     * Lenght of number which determines the difficulty.
+     *
+     * <p>
+     *      Defined in the Config.properties file.
+     * </p>
+     *
+     * @see Mastermind#randomNumber(int)
+     * @see Mastermind#showRresult(int, int, int)
+     * @see Mastermind#reset()
+     * @see Getters#getNumberCase()
+     */
+
     protected  int randomNumber;
+    /**
+     * Random number who define the first number that Brainy and Mr Computer choose.
+     *
+     * <p>
+     *      This number is defined by the number of case selected in Config.properties file and we use this number in factor for have a minimum number and a maximum number of same numeration.
+     *      Finally with an algorithm, we extract a random number.
+     * </p>
+     *
+     * @see Mastermind#randomNumber(int)
+     * @see Getters#getNumberCase()
+     * @see Getters#setBrainyNumber(String)
+     * @see Getters#setMrCpuNumber(String)
+     */
+
     protected  int minimumNumber;
+    /**
+     * Minimum number used for create a random number.
+
+     * @see Mastermind#randomNumber(int)
+     */
+
     protected  int maximumNumber;
+    /**
+     * Maximum number used for create a random number.
+
+     * @see Mastermind#randomNumber(int)
+     */
+
     protected  int numberPresent;
+    /**
+     * A clue who help the user to know how many number are present to the proposition.
+     *
+     * @see Mastermind#showRresult(int, int, int)
+     * @see Mastermind#logic(int, int, String, String)
+     * @see Mastermind#reset()
+     */
     protected  int numberWellPositioned;
+    /**
+     * A clue who help the user to know how many number are well positioned to the proposition.
+     *
+     * @see Mastermind#showRresult(int, int, int)
+     * @see Mastermind#logic(int, int, String, String)
+     * @see Mastermind#reset()
+     */
 
     protected String answer;
+    /**
+     * The answer is given when the developer mode is activated.
+     *
+     *<p>
+     *     If system mode = true, the developer mode is activated and all result will be give.
+     *</p>
+     *
+     * @see Getters#getAnswer()
+     * @see Getters#setAnswer(String)
+     */
+
     protected String parameter1;
+    /**
+     *     A useful parameter 1 for the comparison table.
+     *
+     *     <p>
+     *         Parameter 1 takes the value of playerNumber in using the parameter of the logic method.
+     *     </p>
+     *
+     * @see Mastermind#logic(int, int, String, String)
+     */
+
     protected String parameter2;
+    /**
+     *     A useful parameter 2 for the comparison table.
+     *
+     *     <p>
+     *         Parameter 2 takes the value of playerNumber in using the parameter of the logic method.
+     *     </p>
+     *
+     * @see Mastermind#logic(int, int, String, String)
+     */
+
     protected String playerNumber;
+    /**
+     *     A number chosen by the player.
+     *
+     *     <p>
+     *          setPlayerNumber is configured for respected some rules.
+     *          Like insert the good number quantity and insert only numeric characters with condition and regex.
+     *     </p>
+     *
+     * @see Mastermind#reset()
+     * @see Getters#getPlayerNumber()
+     * @see Getters#setPlayerNumber(String)
+     */
+
     protected String brainyNumber;
+    /**
+     *     A number chosen by Brainy.
+     *
+     *     <p>
+     *          Brainy number is created with random number
+     *     </p>
+     *
+     * @see Mastermind#logic(int, int, String, String)
+     * @see Getters#getBrainyNumber()
+     * @see Getters#setBrainyNumber(String)
+     */
+
     protected String mrCpuNumber;
+    /**
+     *     A number chosen by Mr Computer.
+     *
+     *     <p>
+     *          Mr Computer number is created with random number
+     *     </p>
+     *
+     * @see Getters#getMrCpuNumber() ()
+     * @see Getters#setMrCpuNumber(String)
+     */
+
     protected String arrayClue;
+    /**
+     *     A clues indicating each number if it is greater, inferior or equal to the result that the user must find
+     *
+     *     <p>
+     *          If number is greater,our number will increase of +1
+     *          else if number is inferior, our number will decrease of -1
+     *          If the number is equal, it will stay the same
+     *     </p>
+     *
+     * @see Mastermind#showRresult(int, int, int)
+     * @see Mastermind#logic(int, int, String, String)
+     * @see Mastermind#reset()
+     * @see Getters#getMrCpuNumber() ()
+     * @see Getters#setMrCpuNumber(String)
+     */
+
     protected String name;
-    protected String dialogueReturn = "error";
+    /**
+     *         User can chose his name.
+     *
+     *     <p>
+     *          setname is configured for respected some rules.
+     *          You need to respect the limit mini and limit maxi define in Config.properties to choose a name.
+     *     </p>
+     *
+     * @see Mastermind#createName()
+     * @see Mastermind#showRresult(int, int, int)
+     * @see Mastermind#dialogue(int, String, String, String)
+     * @see Getters#getName()
+     * @see Getters#setName(String)
+     */
 
      public Mastermind(){
 

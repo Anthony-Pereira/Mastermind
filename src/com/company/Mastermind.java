@@ -7,7 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * <b>Mastermind is the Class representating the Mastermind Game.</b>
+ * <b>Mastermind is the Class representing the Mastermind Game.</b>
  * <p>
  * this game is characterized by the following information:
  * <ul>
@@ -42,33 +42,35 @@ import org.apache.logging.log4j.Logger;
  * @author Anthony Pereira
  * @version %I%, %G%
  */
-
 public class Mastermind {
 
     static final Logger logger = LogManager.getLogger();
 
-    protected Boolean systemMode;
+
     /**
      * System mode. This mode can be modified.
      *
      * @see Mastermind#systemMode(String[])
      * @see Getters#getSystemMode()
      */
+    protected Boolean systemMode;
 
-    protected Boolean responseIsGood = true;
+
     /**
      * Result is true or false. This mode can be modified.
-    */
+     */
+    protected Boolean responseIsGood = true;
 
-    protected  int menu;
+
     /**
      * Menu mode. This menu can be changed.
      *
      * @see Mastermind#menu()
      * @see Getters#getMenu()
      */
+    protected  int menu;
 
-    protected  int mode;
+
     /**
      * Game mode. This menu can be changed.
      *
@@ -79,8 +81,9 @@ public class Mastermind {
      * @see Mastermind#games(int)
      * @see Getters#getMode()
      */
+    protected  int mode;
 
-    protected  int replay;
+
     /**
      * <p>
      *      At the end game, replay can be changed for restart a game party.
@@ -89,8 +92,9 @@ public class Mastermind {
      * @see Getters#getReplay()
      * @see Getters#setReplay(int)
      */
+    protected  int replay;
 
-    protected  int mainMenu;
+
     /**
      * <p>
      *      If the game party it's not replayed, you can return at main menu.
@@ -99,8 +103,9 @@ public class Mastermind {
      * @see Getters#getMainMenu()
      * @see Getters#setMainMenu(int)
      */
+    protected  int mainMenu;
 
-    protected  int chance;
+
     /**
      * number of chances to find the answer.
      *
@@ -113,8 +118,9 @@ public class Mastermind {
      * @see Mastermind#reset()
      * @see Getters#getChance()
      */
+    protected  int chance;
 
-    protected  int numberCase;
+
     /**
      * Lenght of number which determines the difficulty.
      *
@@ -127,8 +133,9 @@ public class Mastermind {
      * @see Mastermind#reset()
      * @see Getters#getNumberCase()
      */
+    protected  int numberCase;
 
-    protected  int randomNumber;
+
     /**
      * Random number who define the first number that Brainy and Mr Computer choose.
      *
@@ -142,22 +149,25 @@ public class Mastermind {
      * @see Getters#setBrainyNumber(String)
      * @see Getters#setMrCpuNumber(String)
      */
+    protected  int randomNumber;
 
-    protected  int minimumNumber;
+
     /**
      * Minimum number used for create a random number.
 
      * @see Mastermind#randomNumber(int)
      */
+    protected  int minimumNumber;
 
-    protected  int maximumNumber;
+
     /**
      * Maximum number used for create a random number.
 
      * @see Mastermind#randomNumber(int)
      */
+    protected  int maximumNumber;
 
-    protected  int numberPresent;
+
     /**
      * A clue who help the user to know how many number are present to the proposition.
      *
@@ -165,7 +175,9 @@ public class Mastermind {
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      */
-    protected  int numberWellPositioned;
+    protected  int numberPresent;
+
+
     /**
      * A clue who help the user to know how many number are well positioned to the proposition.
      *
@@ -173,8 +185,9 @@ public class Mastermind {
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      */
+    protected  int numberWellPositioned;
 
-    protected String answer;
+
     /**
      * The answer is given when the developer mode is activated.
      *
@@ -185,8 +198,9 @@ public class Mastermind {
      * @see Getters#getAnswer()
      * @see Getters#setAnswer(String)
      */
+    protected String answer;
 
-    protected String parameter1;
+
     /**
      *     A useful parameter 1 for the comparison table.
      *
@@ -196,8 +210,9 @@ public class Mastermind {
      *
      * @see Mastermind#logic(int, int, String, String)
      */
+    protected String parameter1;
 
-    protected String parameter2;
+
     /**
      *     A useful parameter 2 for the comparison table.
      *
@@ -207,8 +222,9 @@ public class Mastermind {
      *
      * @see Mastermind#logic(int, int, String, String)
      */
+    protected String parameter2;
 
-    protected String playerNumber;
+
     /**
      *     A number chosen by the player.
      *
@@ -221,8 +237,9 @@ public class Mastermind {
      * @see Getters#getPlayerNumber()
      * @see Getters#setPlayerNumber(String)
      */
+    protected String playerNumber;
 
-    protected String brainyNumber;
+
     /**
      *     A number chosen by Brainy.
      *
@@ -234,8 +251,9 @@ public class Mastermind {
      * @see Getters#getBrainyNumber()
      * @see Getters#setBrainyNumber(String)
      */
+    protected String brainyNumber;
 
-    protected String mrCpuNumber;
+
     /**
      *     A number chosen by Mr Computer.
      *
@@ -246,8 +264,9 @@ public class Mastermind {
      * @see Getters#getMrCpuNumber() ()
      * @see Getters#setMrCpuNumber(String)
      */
+    protected String mrCpuNumber;
 
-    protected String arrayClue;
+
     /**
      *     A clues indicating each number if it is greater, inferior or equal to the result that the user must find
      *
@@ -263,8 +282,9 @@ public class Mastermind {
      * @see Getters#getMrCpuNumber() ()
      * @see Getters#setMrCpuNumber(String)
      */
+    protected String arrayClue;
 
-    protected String name;
+
     /**
      *         User can chose his name.
      *
@@ -279,7 +299,21 @@ public class Mastermind {
      * @see Getters#getName()
      * @see Getters#setName(String)
      */
+    protected String name;
 
+
+    /**
+     * Mastermind Constructor.
+     * <p>
+     * When you construct a Mastermind object, player number and array clue are fixed  at ???
+     * and number well positioned and number present are fixed at 0.
+     * </p>
+     *
+     * @see Mastermind#playerNumber
+     * @see Mastermind#arrayClue
+     * @see Mastermind#numberWellPositioned
+     * @see Mastermind#numberPresent
+     */
      public Mastermind(){
 
          this.playerNumber = "???";
@@ -288,6 +322,16 @@ public class Mastermind {
          this.numberPresent = 0;
      }
 
+
+    /**
+     * Switch between the game and the developer mode.
+     *
+     * @param args
+     *            Value who define the system mode.
+     *            This value is chosen in Jshell.
+     *
+     * @return the system mode
+     */
     public boolean systemMode(String[] args){
 
          this.systemMode = false;
@@ -298,6 +342,15 @@ public class Mastermind {
          return this.systemMode;
     }
 
+
+    /**
+     * Switch between the game and the developer mode.
+     *
+     * @param numberCase
+     *                  number of digits in the combination, define in Config.properties file.
+     *
+     * @return a random number casted in String.
+     */
     public String randomNumber(int numberCase) {
 
          this.numberCase = numberCase;
@@ -315,6 +368,12 @@ public class Mastermind {
         return Integer.toString(randomNumber);
     }
 
+
+    /**
+     * Name creation.
+     *
+     * @return the username.
+     */
     public String createName () {
 
          ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/name.jpg");
@@ -326,6 +385,10 @@ public class Mastermind {
         return this.name;
     }
 
+
+    /**
+     * Game introduction.
+     */
     public void introduction () throws IOException {
 
          Properties p = new Properties();
@@ -339,6 +402,12 @@ public class Mastermind {
              JOptionPane.showMessageDialog(null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
     }
 
+
+    /**
+     * Game menu.
+     *
+     * @return the choose of user
+     */
     public int menu () {
 
          String[] options = {"PUZZLE", "ENIGMA"};
@@ -351,6 +420,15 @@ public class Mastermind {
          return this.menu;
     }
 
+
+    /**
+     * Game mode.
+     *
+     * @param menu
+     *
+     * @return the choose of user
+     *
+     */
     public int games (int menu) throws IOException {
 
          Properties p = new Properties();
@@ -387,6 +465,21 @@ public class Mastermind {
         return this.mode;
     }
 
+
+    /**
+     * Insert the number chosen by the user.
+     *
+     * @param menu
+     *              Sets the style mode for input window.
+     *
+     * @param mode
+     *
+     * @param chance
+     *              allows to know the number of chance remaining in the sentence.
+     *
+     *
+     * @return input of user
+     */
     public String showRresult (int menu,int mode,int chance) throws IOException {
 
         Properties p = new Properties();
@@ -429,6 +522,20 @@ public class Mastermind {
         return this.playerNumber;
     }
 
+
+    /**
+     * Used to process information, comparison, clue.
+     *
+     * @param mode
+     *
+     * @param numberCase
+     *      number case defined by the user
+     *
+     * @param parameter1
+     *      allows to compare the parameter 1 and the parameter 2 between them.
+     * @param parameter2
+     *      allows to compare the parameter 1 and the parameter 2 between them.
+     */
     public void logic (int mode,int numberCase, String parameter1, String parameter2) throws IOException {
 
          Properties p = new Properties();
@@ -501,6 +608,21 @@ public class Mastermind {
          logger.warn(String.format("number present : " ,this.numberPresent));
     }
 
+
+    /**
+     * Defines the game interactivity
+     *
+     * @param mode
+     *
+     * @param parameter1
+     *      allows to defines the interactivity
+     *
+     * @param parameter2
+     *      allows to defines the interactivity
+     *
+     * @param name
+     *      allows to defines the interactivity
+     */
     public void dialogue (int mode, String parameter1, String parameter2, String name) {
 
          this.mode = mode;
@@ -567,6 +689,10 @@ public class Mastermind {
          }
     }
 
+
+    /**
+     * Resets the game
+     */
     public void reset () throws IOException {
 
         Properties p = new Properties();

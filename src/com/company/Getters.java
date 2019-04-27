@@ -33,6 +33,17 @@ public class Getters extends Mastermind {
         return this.playerNumber;
     }
 
+
+    /**
+     *     A number chosen by the player.
+     *
+     *     <p>
+     *          setPlayerNumber is configured for respected some rules.
+     *          Like insert the good number quantity and insert only numeric characters with condition and regex.
+     *     </p>
+     *
+     * @param playerNumber
+     */
     public void setPlayerNumber(String playerNumber) throws IOException {
 
         Properties p = new Properties();
@@ -79,6 +90,16 @@ public class Getters extends Mastermind {
 
     public String getName() { return this.name; }
 
+
+    /**
+     *         User can chose his name.
+     *
+     *     <p>
+     *          setname is configured for respected some rules.
+     *          You need to respect the limit mini and limit maxi define in Config.properties to choose a name.
+     *     </p>
+     * @param  name
+     */
     public void setName(String name) throws IOException {
 
         Properties p = new Properties();

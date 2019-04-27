@@ -244,7 +244,7 @@ public class Mastermind {
      *     A number chosen by Brainy.
      *
      *     <p>
-     *          Brainy number is created with random number
+     *          Brainy number is created with random number.
      *     </p>
      *
      * @see Mastermind#logic(int, int, String, String)
@@ -258,7 +258,7 @@ public class Mastermind {
      *     A number chosen by Mr Computer.
      *
      *     <p>
-     *          Mr Computer number is created with random number
+     *          Mr Computer number is created with random number.
      *     </p>
      *
      * @see Getters#getMrCpuNumber() ()
@@ -268,12 +268,12 @@ public class Mastermind {
 
 
     /**
-     *     A clues indicating each number if it is greater, inferior or equal to the result that the user must find
+     *     A clues indicating each number if it is greater, inferior or equal to the result that the user must find.
      *
      *     <p>
      *          If number is greater,our number will increase of +1
      *          else if number is inferior, our number will decrease of -1
-     *          If the number is equal, it will stay the same
+     *          If the number is equal, it will stay the same.
      *     </p>
      *
      * @see Mastermind#showRresult(int, int, int)
@@ -330,7 +330,7 @@ public class Mastermind {
      *            Value who define the system mode.
      *            This value is chosen in Jshell.
      *
-     * @return the system mode
+     * @return the system mode.
      */
     public boolean systemMode(String[] args){
 
@@ -406,7 +406,7 @@ public class Mastermind {
     /**
      * Game menu.
      *
-     * @return the choose of user
+     * @return the choose of user.
      */
     public int menu () {
 
@@ -426,7 +426,7 @@ public class Mastermind {
      *
      * @param menu
      *
-     * @return the choose of user
+     * @return the choose of user.
      *
      */
     public int games (int menu) throws IOException {
@@ -478,7 +478,7 @@ public class Mastermind {
      *              allows to know the number of chance remaining in the sentence.
      *
      *
-     * @return input of user
+     * @return input of user.
      */
     public String showRresult (int menu,int mode,int chance) throws IOException {
 
@@ -529,7 +529,7 @@ public class Mastermind {
      * @param mode
      *
      * @param numberCase
-     *      number case defined by the user
+     *      number case defined by the user.
      *
      * @param parameter1
      *      allows to compare the parameter 1 and the parameter 2 between them.
@@ -610,18 +610,18 @@ public class Mastermind {
 
 
     /**
-     * Defines the game interactivity
+     * Defines the game interactivity.
      *
      * @param mode
      *
      * @param parameter1
-     *      allows to defines the interactivity
+     *      allows to defines the interactivity.
      *
      * @param parameter2
-     *      allows to defines the interactivity
+     *      allows to defines the interactivity.
      *
      * @param name
-     *      allows to defines the interactivity
+     *      allows to defines the interactivity.
      */
     public void dialogue (int mode, String parameter1, String parameter2, String name) {
 
@@ -691,7 +691,7 @@ public class Mastermind {
 
 
     /**
-     * Resets the game
+     * Resets the game.
      */
     public void reset () throws IOException {
 

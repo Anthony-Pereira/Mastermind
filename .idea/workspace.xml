@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76d26a1b-6353-4ab2-af7c-403d777bb286" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="76d26a1b-6353-4ab2-af7c-403d777bb286" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Mastermind.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3910">
-              <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
+            <state relative-caret-position="597">
+              <caret line="297" column="32" lean-forward="true" selection-start-line="297" selection-start-column="32" selection-end-line="297" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,7 +135,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Getters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
+            <state relative-caret-position="1139">
               <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -171,7 +169,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -261,7 +259,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -284,6 +282,11 @@
             </path>
             <path>
               <item name="mastermind" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mastermind" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mastermind" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -293,7 +296,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556366292944" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556367703593" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -301,11 +304,11 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Anthony\Documents\workspace\dev\java\project\mastermind\src" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.company" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anthony\Documents\workspace\dev\java\project\mastermind\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -372,7 +375,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49386084" visible="true" weight="0.10074627" />
       <window_info id="Structure" order="1" sideWeight="0.50613916" side_tool="true" weight="0.042643923" />
@@ -533,7 +537,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Getters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
+        <state relative-caret-position="1139">
           <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -562,8 +566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Mastermind.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3910">
-          <caret line="281" lean-forward="true" selection-start-line="281" selection-end-line="281" />
+        <state relative-caret-position="597">
+          <caret line="297" column="32" lean-forward="true" selection-start-line="297" selection-start-column="32" selection-end-line="297" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

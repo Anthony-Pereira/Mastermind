@@ -68,8 +68,8 @@ public class Getters extends Mastermind {
 
     public String getBrainyNumber() { return this.brainyNumber; }
 
-    public void setBrainyNumber(String computerNumber) {
-        this.brainyNumber = computerNumber;
+    public void setBrainyNumber(String brainyNumber) {
+        this.brainyNumber = brainyNumber;
     }
 
     public int getChance() { return chance; }
@@ -82,7 +82,7 @@ public class Getters extends Mastermind {
 
     public String getMrCpuNumber() { return mrCpuNumber; }
 
-    public void setMrCpuNumber(String refereeNumber) { this.mrCpuNumber = refereeNumber; }
+    public void setMrCpuNumber(String mrCpuNumber) { this.mrCpuNumber = mrCpuNumber; }
 
     public int getMainMenu() { return mainMenu; }
 

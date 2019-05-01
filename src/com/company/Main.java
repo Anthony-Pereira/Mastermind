@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Getters mastermind = new Getters();
-        Mastermind player = new Getters(mastermind.name,mastermind.getChance(),mastermind.getPlayerNumber());
+        Mastermind player = new Getters(mastermind.getName(),mastermind.getChance(),mastermind.getPlayerNumber());
         Mastermind brainy = new Getters("Brainy",mastermind.getChance(),mastermind.getBrainyNumber());
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/replay.jpg");
         ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/main_menu.jpg");

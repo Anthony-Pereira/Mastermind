@@ -140,7 +140,8 @@ public class Mastermind {
      * Random number who define the first number that Brainy and Mr Computer choose.
      *
      * <p>
-     *      This number is defined by the number of case selected in Config.properties file and we use this number in factor for have a minimum number and a maximum number of same numeration.
+     *      This number is defined by the number of case selected in Config.properties file and we use this number in
+     *      factor for have a minimum number and a maximum number of same numeration.
      *      Finally with an algorithm, we extract a random number.
      * </p>
      *
@@ -378,7 +379,8 @@ public class Mastermind {
 
          ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/name.jpg");
 
-         this.name = (String) JOptionPane.showInputDialog(null,"ENTER YOUR NAME","MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_01,null,"USER");
+         this.name = (String) JOptionPane.showInputDialog(null,"ENTER YOUR NAME","MASTERMIND",
+                 JOptionPane.INFORMATION_MESSAGE,icon_01,null,"USER");
 
          logger.info(String.format("username = %s",this.name));
 
@@ -399,7 +401,8 @@ public class Mastermind {
              ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/presentation.jpg");
 
              JOptionPane.showMessageDialog(null, null, "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
-             JOptionPane.showMessageDialog(null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND",
+                     JOptionPane.INFORMATION_MESSAGE, icon_02);
     }
 
 
@@ -413,7 +416,8 @@ public class Mastermind {
          String[] options = {"PUZZLE", "ENIGMA"};
          ImageIcon icon = new ImageIcon("src/com/resources/picture/mode.jpg");
 
-         this.menu = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
+         this.menu = JOptionPane.showOptionDialog(null, "", "MASTERMIND",
+                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
 
          logger.warn(String.format("menu choice = %s",this.menu));
 
@@ -444,19 +448,23 @@ public class Mastermind {
 
 
 
-         this.mode = JOptionPane.showOptionDialog(null, "", "MASTERMIND", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]);
+         this.mode = JOptionPane.showOptionDialog(null, "", "MASTERMIND",
+                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]);
 
 
          if (this.mode == 0) {
-             JOptionPane.showMessageDialog(null, "CHALLENGER MODE\nFIND MY SECRET COMBINATION\nGOOD LUCK !","MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "CHALLENGER MODE\nFIND MY SECRET COMBINATION\nGOOD LUCK !","MASTERMIND",
+                     JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 1) {
-             JOptionPane.showMessageDialog(null, "DEFENDER MODE\nI MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_02);
+             JOptionPane.showMessageDialog(null, "DEFENDER MODE\nI MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND",
+                     JOptionPane.INFORMATION_MESSAGE, icon_02);
          }
 
          else if (this.mode == 2) {
-             JOptionPane.showMessageDialog(null, "DUEL MODE\nTURN-BASED\nFIND MY NUMBER\nGOOD LUCK !", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_03);
+             JOptionPane.showMessageDialog(null, "DUEL MODE\nTURN-BASED\nFIND MY NUMBER\nGOOD LUCK !", "MASTERMIND",
+                     JOptionPane.INFORMATION_MESSAGE, icon_03);
          }
 
         logger.info(String.format("menu choice = %s",this.menu));
@@ -645,10 +653,12 @@ public class Mastermind {
              case 0 :
 
                  if (this.parameter1.equals(this.parameter2)) {
-                     JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+ " , YOU WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+
+                             " , YOU WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
                      Integer.toString(this.chance = -1);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                     JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+
+                             this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
                      Integer.toString(this.chance = -1);
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
@@ -663,7 +673,8 @@ public class Mastermind {
                      JOptionPane.showMessageDialog(null, "BRAINY: YEAH !!! I WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
                      Integer.toString(this.chance = -1);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "BRAINY: I DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter2+"\nYOU WIN\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                     JOptionPane.showMessageDialog(null, "BRAINY: I DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+
+                             this.parameter2+"\nYOU WIN\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
                      Integer.toString(this.chance = -1);
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_03);
@@ -675,10 +686,12 @@ public class Mastermind {
              case 2 :
 
                  if (this.parameter1.equals(this.parameter2)) {
-                     JOptionPane.showMessageDialog(null, "CPU: CONGRATULATION "+this.name.toUpperCase()+ " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_04);
+                     JOptionPane.showMessageDialog(null, "CPU: CONGRATULATION "+this.name.toUpperCase()+
+                             " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_04);
                      Integer.toString(this.chance = -1);
                  } else if (this.chance == 0) {
-                     JOptionPane.showMessageDialog(null, "CPU: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_05);
+                     JOptionPane.showMessageDialog(null, "CPU: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+
+                             this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_05);
                      Integer.toString(this.chance = -1);
                  }else {
                      JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_06);

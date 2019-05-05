@@ -47,3 +47,11 @@ This setting is available since the parameter file (config.PROPERTIES);
 you can modif the number case of secret combination possible and number of chance possible.
 
 information: You can also change the insertion number that the user name can have.
+
+
+
+DEVELOPPER MODE:
+
+A developper mode is integrated.
+
+For activate this, two possibilities : In config.properties file with systemMode variable and directly in console to add a parameter "true" or "dev"

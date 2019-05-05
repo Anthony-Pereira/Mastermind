@@ -73,7 +73,7 @@ public class Main {
                                     JOptionPane.showMessageDialog(null, "ANSWER: "+
                                             mastermind.getAnswer(),"MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE,icon_05);
                                 if (((Getters) brainy).getChance() != 0) JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
-                                        p.getProperty("numberCase")+"\nCHANCE: "+((Getters) brainy).getChance()+"\nBRAINY: YOU'RE NUMBER IS "+
+                                        p.getProperty("numberCase")+"\nCHANCE: "+((Getters) brainy).getChance()+"\nBRAINY: YOUR NUMBER IS "+
                                         ((Getters) brainy).getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                 brainy.dialogue(mastermind.getMode(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getPlayerNumber(),((Getters) brainy).getName());
                                 brainy.logic(mastermind.getMode(), mastermind.getNumberCase(), ((Getters) brainy).getBrainyNumber(), ((Getters) player).getPlayerNumber());
@@ -108,7 +108,7 @@ public class Main {
                                 if (((Getters) player).getChance() == -1) {break;}
                                 do {
                                     if (((Getters) brainy).getChance() != 0) JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
-                                            p.getProperty("numberCase")+"\nCHANCE: "+((Getters) brainy).getChance()+"\nBRAINY: YOU'RE NUMBER IS "+
+                                            p.getProperty("numberCase")+"\nCHANCE: "+((Getters) brainy).getChance()+"\nBRAINY: YOUR NUMBER IS "+
                                             ((Getters) brainy).getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                     brainy.dialogue(mastermind.getMode(), ((Getters) brainy).getBrainyNumber(), mastermind.getMrCpuNumber(),((Getters) brainy).getName());
                                     brainy.logic(mastermind.getMode(), mastermind.getNumberCase(), ((Getters) brainy).getBrainyNumber(), mastermind.getMrCpuNumber());

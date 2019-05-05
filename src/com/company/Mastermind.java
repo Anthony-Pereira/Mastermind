@@ -336,7 +336,8 @@ public class Mastermind {
     public boolean systemMode(String[] args){
 
          this.systemMode = false;
-         this.systemMode = Boolean.valueOf(String.valueOf(args));
+         this.systemMode = Boolean.valueOf(String.valueOf(args [0]));
+         if (args[0].equals("dev")) {this.systemMode = true;}
 
          logger.info(String.format("system mode = %s",this.systemMode));
 

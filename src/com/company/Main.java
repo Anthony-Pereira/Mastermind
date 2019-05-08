@@ -24,9 +24,6 @@ public class Main {
             brainy.setName("brainy");
             game.setNumberCase(Integer.parseInt(p.getProperty("numberCase")));
 
-               // Game player = new Game(game.getName(),mastermind.getChance(),mastermind.getPlayerNumber());
-                 //   Game brainy = new Game("Brainy",mastermind.getChance(),mastermind.getBrainyNumber());
-
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/replay.jpg");
             ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/main_menu.jpg");
                 ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/good_bye.jpg");

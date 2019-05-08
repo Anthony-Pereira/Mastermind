@@ -101,6 +101,60 @@ public class Game extends Mastermind {
         return this.mode;
     }
 
+    /**
+     * Insert the number chosen by the user.
+     * @param menu
+     * Sets the style mode for input window.
+     * @param mode
+     * @param chance
+     * allows to know the number of chance remaining in the sentence.
+     * @return input of user.
+     */
+    public String showRresult (int menu,int mode,int chance) throws IOException {
+
+        Properties p = new Properties();
+        InputStream is = new FileInputStream("src/com/resources/Config.properties");
+        p.load(is);
+
+        this.menu = menu;
+        this.mode = mode;
+        this.chance = chance;
+
+        String previousNumber;
+
+        if (this.playerNumber.length() != Integer.parseInt(p.getProperty("numberCase"))){
+            previousNumber = "???";
+            logger.error(String.format("typing error previous number = %s",previousNumber));
+        } else {
+            previousNumber = this.playerNumber;
+            logger.info(String.format("good seizure previous number = %s",previousNumber));
+        }
+
+        switch (this.menu){
+
+            case 0 : this.playerNumber = JOptionPane.showInputDialog
+                    (null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ",
+                            this.numberCase, this.chance, this.name.toUpperCase(), previousNumber, this.arrayClue)));
+                break;
+            case 1 : this.playerNumber = JOptionPane.showInputDialog
+                    (null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ",
+                            this.numberCase, this.chance, this.name.toUpperCase(), previousNumber, this.numberWellPositioned, this.numberPresent));
+                break;
+        }
+
+        logger.info(String.format("menu choice = %s",this.menu));
+        logger.info(String.format("game choice = %s",this.mode));
+        logger.info(String.format("number case = %s",this.numberCase));
+        logger.info(String.format("chance = %s",this.chance));
+        logger.info(String.format("name = %s",this.name));
+        logger.warn(String.format("previous number = %s",previousNumber));
+        logger.warn(String.format("player number = %s",this.playerNumber));
+        logger.warn(String.format("array clue = %s",this.arrayClue));
+        logger.warn(String.format("number well positioned = %s",this.numberWellPositioned));
+        logger.warn(String.format("number present = %s",this.numberPresent));
+        return this.playerNumber;
+    }
+
     public String getName() { return this.name; }
 
     /**

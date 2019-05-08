@@ -36,7 +36,8 @@ import org.apache.logging.log4j.Logger;
  *      <li>Dialogues for interactivity </li>
  * </ul>
  * </p>
- * @see Getters
+ * @see Mastermind
+ * @see Game
  * @author Anthony Pereira
  * @version %I%, %G%
  */
@@ -54,7 +55,7 @@ public class Mastermind {
     /**
      * Menu mode. This menu can be changed.
      * @see Game#menu()
-     * @see Getters#getMenu()
+     * @see Game#getMenu()
      */
     protected  int menu;
 
@@ -64,7 +65,7 @@ public class Mastermind {
      *      User chose one of three game.
      * </p>
      * @see Game#games(int)
-     * @see Getters#getMode()
+     * @see Game#getMode()
      */
     protected  int mode;
 
@@ -72,8 +73,8 @@ public class Mastermind {
      * <p>
      *      At the end game, replay can be changed for restart a game party.
      * </p>
-     * @see Getters#getReplay()
-     * @see Getters#setReplay(int)
+     * @see Mastermind#getReplay()
+     * @see Mastermind#setReplay(int)
      */
     protected  int replay;
 
@@ -81,8 +82,8 @@ public class Mastermind {
      * <p>
      *      If the game party it's not replayed, you can return at main menu.
      * </p>
-     * @see Getters#getMainMenu()
-     * @see Getters#setMainMenu(int)
+     * @see Mastermind#getMainMenu()
+     * @see Mastermind#setMainMenu(int)
      */
     protected  int mainMenu;
 
@@ -91,10 +92,10 @@ public class Mastermind {
      * <p>
      *    Defined in the Config.properties file.
      * </p>
-     * @see Mastermind#showRresult(int, int, int)
+     * @see Game#showRresult(int, int, int)
      * @see Mastermind#dialogue(int, String, String, String)
      * @see Mastermind#reset()
-     * @see Getters#getChance()
+     * @see Mastermind#getChance()
      */
     protected  int chance;
 
@@ -104,9 +105,9 @@ public class Mastermind {
      *      Defined in the Config.properties file.
      * </p>
      * @see Mastermind#randomNumber(int)
-     * @see Mastermind#showRresult(int, int, int)
+     * @see Game#showRresult(int, int, int)
      * @see Mastermind#reset()
-     * @see Getters#getNumberCase()
+     * @see Mastermind#getNumberCase()
      */
     protected  int numberCase;
 
@@ -118,9 +119,9 @@ public class Mastermind {
      *      Finally with an algorithm, we extract a random number.
      * </p>
      * @see Mastermind#randomNumber(int)
-     * @see Getters#getNumberCase()
-     * @see Getters#setBrainyNumber(String)
-     * @see Getters#setMrCpuNumber(String)
+     * @see Mastermind#getNumberCase()
+     * @see Mastermind#setBrainyNumber(String)
+     * @see Mastermind#setMrCpuNumber(String)
      */
     protected  int randomNumber;
 
@@ -138,7 +139,7 @@ public class Mastermind {
 
     /**
      * A clue who help the user to know how many number are present to the proposition.
-     * @see Mastermind#showRresult(int, int, int)
+     * @see Game#showRresult(int, int, int)
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      */
@@ -146,7 +147,7 @@ public class Mastermind {
 
     /**
      * A clue who help the user to know how many number are well positioned to the proposition.
-     * @see Mastermind#showRresult(int, int, int)
+     * @see Game#showRresult(int, int, int)
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      */
@@ -157,8 +158,8 @@ public class Mastermind {
      *<p>
      *     If system mode = true, the developer mode is activated and all result will be give.
      *</p>
-     * @see Getters#getAnswer()
-     * @see Getters#setAnswer(String)
+     * @see Mastermind#getAnswer()
+     * @see Mastermind#setAnswer(String)
      */
     protected String answer;
 
@@ -187,8 +188,8 @@ public class Mastermind {
      *          Like insert the good number quantity and insert only numeric characters with condition and regex.
      *     </p>
      * @see Mastermind#reset()
-     * @see Getters#getPlayerNumber()
-     * @see Getters#setPlayerNumber(String)
+     * @see Mastermind#getPlayerNumber()
+     * @see Mastermind#setPlayerNumber(String)
      */
     protected String playerNumber;
 
@@ -198,8 +199,8 @@ public class Mastermind {
      *          Brainy number is created with random number.
      *     </p>
      * @see Mastermind#logic(int, int, String, String)
-     * @see Getters#getBrainyNumber()
-     * @see Getters#setBrainyNumber(String)
+     * @see Mastermind#getBrainyNumber()
+     * @see Mastermind#setBrainyNumber(String)
      */
     protected String brainyNumber;
 
@@ -208,8 +209,8 @@ public class Mastermind {
      *     <p>
      *          Mr Computer number is created with random number.
      *     </p>
-     * @see Getters#getMrCpuNumber() ()
-     * @see Getters#setMrCpuNumber(String)
+     * @see Mastermind#getMrCpuNumber() ()
+     * @see Mastermind#setMrCpuNumber(String)
      */
     protected String mrCpuNumber;
 
@@ -220,11 +221,11 @@ public class Mastermind {
      *          else if number is inferior, our number will decrease of -1
      *          If the number is equal, it will stay the same.
      *     </p>
-     * @see Mastermind#showRresult(int, int, int)
+     * @see Game#showRresult(int, int, int)
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
-     * @see Getters#getMrCpuNumber() ()
-     * @see Getters#setMrCpuNumber(String)
+     * @see Mastermind#getMrCpuNumber() ()
+     * @see Mastermind#setMrCpuNumber(String)
      */
     protected String arrayClue;
 
@@ -235,7 +236,7 @@ public class Mastermind {
      *          You need to respect the limit mini and limit maxi define in Config.properties to choose a name.
      *     </p>
      * @see Game#createName()
-     * @see Mastermind#showRresult(int, int, int)
+     * @see Game#showRresult(int, int, int)
      * @see Mastermind#dialogue(int, String, String, String)
      * @see Game#getName()
      * @see Game#setName(String)
@@ -288,59 +289,7 @@ public class Mastermind {
         return Integer.toString(randomNumber);
     }
 
-    /**
-     * Insert the number chosen by the user.
-     * @param menu
-     * Sets the style mode for input window.
-     * @param mode
-     * @param chance
-     * allows to know the number of chance remaining in the sentence.
-     * @return input of user.
-     */
-    public String showRresult (int menu,int mode,int chance) throws IOException {
 
-        Properties p = new Properties();
-            InputStream is = new FileInputStream("src/com/resources/Config.properties");
-                p.load(is);
-
-         this.menu = menu;
-            this.mode = mode;
-                this.chance = chance;
-
-         String previousNumber;
-
-         if (this.playerNumber.length() != Integer.parseInt(p.getProperty("numberCase"))){
-             previousNumber = "???";
-                logger.error(String.format("typing error previous number = %s",previousNumber));
-         } else {
-             previousNumber = this.playerNumber;
-                logger.info(String.format("good seizure previous number = %s",previousNumber));
-         }
-
-        switch (this.menu){
-
-            case 0 : this.playerNumber = JOptionPane.showInputDialog
-                (null, (String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s TIPS: %s ",
-                    this.numberCase, this.chance, this.name.toUpperCase(), previousNumber, this.arrayClue)));
-            break;
-            case 1 : this.playerNumber = JOptionPane.showInputDialog
-                (null, String.format("DIFFICULTY: %s\nCHANCE: %s\nPLAYER: %s\nPREVIOUS NUMBER: %s\nNUMBER WELL POSITIONED: %s\nNUMBER PRESENT: %s ",
-                    this.numberCase, this.chance, this.name.toUpperCase(), previousNumber, this.numberWellPositioned, this.numberPresent));
-            break;
-        }
-
-        logger.info(String.format("menu choice = %s",this.menu));
-            logger.info(String.format("game choice = %s",this.mode));
-                logger.info(String.format("number case = %s",this.numberCase));
-                    logger.info(String.format("chance = %s",this.chance));
-                        logger.info(String.format("name = %s",this.name));
-        logger.warn(String.format("previous number = %s",previousNumber));
-            logger.warn(String.format("player number = %s",this.playerNumber));
-                logger.warn(String.format("array clue = %s",this.arrayClue));
-                    logger.warn(String.format("number well positioned = %s",this.numberWellPositioned));
-                        logger.warn(String.format("number present = %s",this.numberPresent));
-        return this.playerNumber;
-    }
 
     /**
      * Used to process information, comparison, clue.
@@ -542,6 +491,7 @@ public class Mastermind {
      */
     public void setPlayerNumber(String playerNumber) throws IOException {
 
+        Game game = new Game();
         Properties p = new Properties();
         InputStream is = new FileInputStream("src/com/resources/Config.properties");
         p.load(is);
@@ -554,7 +504,7 @@ public class Mastermind {
             if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")) || !regexPlayerNumber) {
                 JOptionPane.showMessageDialog(null, "INVALID NUMBER", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
                 logger.error(String.format("typing error for the player's number"));
-                this.showRresult(menu,mode,chance);
+                game.showRresult(menu,mode,chance);
             } else this.playerNumber = playerNumber;
         } while (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")));
     }

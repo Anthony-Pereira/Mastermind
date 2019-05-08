@@ -32,6 +32,9 @@ public class Main {
             mastermind.systemMode(args);
         } catch (Exception e){
             mastermind.setSystemMode(Boolean.parseBoolean(p.getProperty("systemMode")));
+            logger.debug(String.format("no developper parameter finded to Main Class\n" +
+                    "value key of systemMode will be the value to  args of Main class\n" +
+                    "value key = %s",p.getProperty("systemMode")));
         }
 
         mastermind.introduction();
@@ -122,7 +125,6 @@ public class Main {
                                     if (((Getters) player).getChance() != -1) {break;}
                                 } while (((Getters) player).getChance() != -1);
                                 if (((Getters) player).getChance() == -1) {break;}
-
                                 do {
                                     if (((Getters) brainy).getChance() != 0) JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
                                         p.getProperty("numberCase")+"\nCHANCE: "+((Getters) brainy).getChance()+"\nBRAINY: YOUR NUMBER IS "+
@@ -133,13 +135,11 @@ public class Main {
                                 } while (((Getters) brainy).getChance() != -1);
                                 if (((Getters) brainy).getChance() == -1) { break;}
                             } while (((Getters) player).getChance() != -1 || ((Getters) brainy).getChance()!= -1);
-
                             mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
                                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
                                     logger.warn(String.format("replay = %s",mastermind.getReplay()));
                         } while (mastermind.getReplay() == 0);
                         break;
-
                     default:
                 }
             mastermind.setMainMenu(JOptionPane.showOptionDialog(null, "MAIN MENU ?", "MASTERMIND",

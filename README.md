@@ -53,5 +53,42 @@ information: You can also change the insertion number that the user name can hav
 DEVELOPPER MODE:
 
 A developper mode is integrated.
+For activate this, two possibilities : 
+In config.properties file with systemMode variable with "true" or "false",
+Otherwise directly in console to add a parameter "true" or "dev.
 
-For activate this, two possibilities : In config.properties file with systemMode variable and directly in console to add a parameter "true" or "dev"
+
+PREREQUISITES:
+
+you need to install java 8 JDK
+
+
+DEPLOYEMENT:
+
+Step by step:
+- Add the destination path of the mastermind.jar archive to the console.
+- Add "true" or "dev" parameter to enable developer mode,
+ 
+  exemple: java -jar Mastermind.jar true
+	   java -jar Mastermind.jar dev
+
+otherwise add "game" or "false" parameter to start in game mode.
+
+  exemple: java -jar Mastermind.jar false
+	   java -jar Mastermind.jar game
+
+
+BUILT WITH:
+
+intellij idea - The ide used.
+log4j libraries - To logging the errors.
+
+
+VERSIONING:
+
+I use git for versioning.
+
+
+AUTHOR:
+
+Anthony Pereira

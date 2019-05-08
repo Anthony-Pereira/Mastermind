@@ -22,7 +22,6 @@ public class Getters extends Mastermind {
         this.parameter1 = parameter1;
     }
 
-
     public int getMode() {
         return this.mode;
     }
@@ -32,7 +31,6 @@ public class Getters extends Mastermind {
     public String getPlayerNumber() {
         return this.playerNumber;
     }
-
 
     /**
      *     A number chosen by the player.
@@ -90,7 +88,6 @@ public class Getters extends Mastermind {
 
     public String getName() { return this.name; }
 
-
     /**
      *         User can chose his name.
      *
@@ -118,6 +115,8 @@ public class Getters extends Mastermind {
     }
 
     public Boolean getSystemMode() { return this.systemMode; }
+
+    public void setSystemMode(Boolean systemMode) { this.systemMode = systemMode; }
 
     public String getAnswer() { return answer; }
 

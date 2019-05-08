@@ -77,6 +77,10 @@ otherwise add "game" or "false" parameter to start in game mode.
   exemple: java -jar Mastermind.jar false
 	   java -jar Mastermind.jar game
 
+if there no parameter, the program start from the config.properties value system (systemMode).
+
+You can also start the program directly from the IDE
+
 
 BUILT WITH:
 

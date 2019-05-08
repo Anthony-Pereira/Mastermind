@@ -16,10 +16,16 @@ public class Main {
             InputStream is = new FileInputStream("src/com/resources/Config.properties");
                 p.load(is);
 
-        Mastermind mastermind = new Mastermind();
             Game game = new Game();
-                Mastermind player = new Mastermind(game.getName(),mastermind.getChance(),mastermind.getPlayerNumber());
-                    Mastermind brainy = new Mastermind("Brainy",mastermind.getChance(),mastermind.getBrainyNumber());
+            Game player = new Game();
+            Game brainy = new Game();
+            player.setChance(Integer.parseInt(p.getProperty("chance")));
+            brainy.setChance(Integer.parseInt(p.getProperty("chance")));
+            brainy.setName("brainy");
+            game.setNumberCase(Integer.parseInt(p.getProperty("numberCase")));
+
+               // Game player = new Game(game.getName(),mastermind.getChance(),mastermind.getPlayerNumber());
+                 //   Game brainy = new Game("Brainy",mastermind.getChance(),mastermind.getBrainyNumber());
 
         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/replay.jpg");
             ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/main_menu.jpg");
@@ -39,7 +45,7 @@ public class Main {
         }
 
         game.introduction();
-        game.setName(game.createName());
+        player.setName(game.createName());
         do {
              game.menu();
                 game.games(game.getMenu());
@@ -50,40 +56,40 @@ public class Main {
                         do {
                             logger.warn(String.format("system mode = %s",game.getSystemMode()));
                                 player.reset();
-                                    brainy.setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+                                    brainy.setBrainyNumber(brainy.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                                         logger.warn(String.format("Brainy number = %s",brainy.getBrainyNumber()));
-                                            mastermind.setAnswer(brainy.getBrainyNumber());
+                                            brainy.setAnswer(brainy.getBrainyNumber());
                             do {
                                 if (game.getSystemMode() == true || Boolean.parseBoolean(p.getProperty("systemMode"))) {
                                     JOptionPane.showMessageDialog(null, "ANSWER: " +
-                                            mastermind.getAnswer(), "MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE, icon_05);
+                                            brainy.getAnswer(), "MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE, icon_05);
                                 }
                                 if (player.getChance() != 0){
-                                        player.setPlayerNumber(game.showRresult(game.getMenu(),game.getMode(),mastermind.getChance()));
+                                        player.setPlayerNumber(player.showRresult(game.getMenu(),game.getMode(),player.getChance(),game.getNumberCase()));
                                 }
-                                player.dialogue(game.getMode(),player.getPlayerNumber(), brainy.getBrainyNumber(), game.getName());
-                                    player.logic(game.getMode(), mastermind.getNumberCase(),player.getPlayerNumber(), brainy.getBrainyNumber());
+                                player.dialogue(game.getMode(),player.getPlayerNumber(), brainy.getBrainyNumber(), player.getName());
+                                    player.logic(game.getMode(), game.getNumberCase(),player.getPlayerNumber(), brainy.getBrainyNumber());
                             } while (player.getChance() != -1);
 
-                            mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
+                            game.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
                                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
-                                    logger.warn(String.format("replay = %s",mastermind.getReplay()));
-                        } while (mastermind.getReplay() == 0);
+                                    logger.warn(String.format("replay = %s",game.getReplay()));
+                        } while (game.getReplay() == 0);
                         break;
 
                     case 1:
                         do {
                             logger.warn(String.format("system mode = %s",game.getSystemMode()));
                                 brainy.reset();
-                                    brainy.setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+                                    brainy.setBrainyNumber(brainy.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                                         logger.warn(String.format("Brainy number = %s", brainy.getBrainyNumber()));
-                                            player.setPlayerNumber(game.showRresult(game.getMenu(), game.getMode(), brainy.getChance()));
+                                            player.setPlayerNumber(brainy.showRresult(game.getMenu(), game.getMode(), brainy.getChance(),game.getNumberCase()));
                                                 logger.warn(String.format("player number = %s", player.getPlayerNumber()));
-                                                    mastermind.setAnswer(player.getPlayerNumber());
+                                                    player.setAnswer(player.getPlayerNumber());
                             do {
                                 if (game.getSystemMode() == true || Boolean.parseBoolean(p.getProperty("systemMode"))) {
                                     JOptionPane.showMessageDialog(null, "ANSWER: " +
-                                            mastermind.getAnswer(), "MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE, icon_05);
+                                            player.getAnswer(), "MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE, icon_05);
                                 }
                                 if (brainy.getChance() != 0){
                                     JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
@@ -91,37 +97,36 @@ public class Main {
                                             brainy.getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                 }
                                     brainy.dialogue(game.getMode(), brainy.getBrainyNumber(), player.getPlayerNumber(), game.getName());
-                                        brainy.logic(game.getMode(), mastermind.getNumberCase(), brainy.getBrainyNumber(), player.getPlayerNumber());
+                                        brainy.logic(game.getMode(), game.getNumberCase(), brainy.getBrainyNumber(), player.getPlayerNumber());
                             } while (brainy.getChance() != -1);
-
-                                    mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
+                                    game.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
                                         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
-                                            logger.warn(String.format("replay = %s",mastermind.getReplay()));
-                        } while (mastermind.getReplay() == 0);
+                                            logger.warn(String.format("replay = %s",game.getReplay()));
+                        } while (game.getReplay() == 0);
                         break;
 
                     case 2:
                         do {
                             logger.warn(String.format("system mode = %s",game.getSystemMode()));
-                                brainy.setBrainyNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+                                brainy.setBrainyNumber(brainy.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                                     logger.warn(String.format("Brainy number = %s", brainy.getBrainyNumber()));
-                                        mastermind.setMrCpuNumber(mastermind.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
-                                            logger.warn(String.format("Mr CPU number = %s",mastermind.getMrCpuNumber()));
+                                        game.setMrCpuNumber(game.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
+                                            logger.warn(String.format("Mr CPU number = %s",game.getMrCpuNumber()));
 
                             player.reset();
                                 brainy.reset();
 
-                            mastermind.setAnswer(mastermind.getMrCpuNumber());
+                            game.setAnswer(game.getMrCpuNumber());
                             do {
                                 do {
                                     if (game.getSystemMode() == true || Boolean.parseBoolean(p.getProperty("systemMode")))
                                         JOptionPane.showMessageDialog
-                                            (null, "ANSWER: " + mastermind.getAnswer(), "MASTERMIND (DEVELOPER MODE)",
+                                            (null, "ANSWER: " + game.getAnswer(), "MASTERMIND (DEVELOPER MODE)",
                                                 JOptionPane.INFORMATION_MESSAGE, icon_05);
                                     if (player.getChance() != 0)
-                                            player.setPlayerNumber(game.showRresult(game.getMenu(), game.getMode(), player.getChance()));
-                                                player.dialogue(game.getMode(), player.getPlayerNumber(), mastermind.getMrCpuNumber(), game.getName());
-                                                    player.logic(game.getMode(), mastermind.getNumberCase(), player.getPlayerNumber(), mastermind.getMrCpuNumber());
+                                            player.setPlayerNumber(player.showRresult(game.getMenu(), game.getMode(), player.getChance(),game.getNumberCase()));
+                                                player.dialogue(game.getMode(), player.getPlayerNumber(), game.getMrCpuNumber(), player.getName());
+                                                    player.logic(game.getMode(), game.getNumberCase(), player.getPlayerNumber(), game.getMrCpuNumber());
                                     if (player.getChance() != -1) {break;}
                                 } while (player.getChance() != -1);
                                 if (player.getChance() == -1) {break;}
@@ -129,23 +134,23 @@ public class Main {
                                     if (brainy.getChance() != 0) JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
                                         p.getProperty("numberCase")+"\nCHANCE: "+ brainy.getChance()+"\nBRAINY: YOUR NUMBER IS "+
                                             brainy.getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
-                                    brainy.dialogue(game.getMode(), brainy.getBrainyNumber(), mastermind.getMrCpuNumber(), game.getName());
-                                    brainy.logic(game.getMode(), mastermind.getNumberCase(), brainy.getBrainyNumber(), mastermind.getMrCpuNumber());
+                                    brainy.dialogue(game.getMode(), brainy.getBrainyNumber(), game.getMrCpuNumber(), brainy.getName());
+                                    brainy.logic(game.getMode(), game.getNumberCase(), brainy.getBrainyNumber(), game.getMrCpuNumber());
                                     if (brainy.getChance() != -1) {break;}
                                 } while (brainy.getChance() != -1);
                                 if (brainy.getChance() == -1) { break;}
                             } while (player.getChance() != -1 || brainy.getChance()!= -1);
-                            mastermind.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
+                            game.setReplay(JOptionPane.showOptionDialog(null, "REPLAY ?", "MASTERMIND",
                                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]));
-                                    logger.warn(String.format("replay = %s",mastermind.getReplay()));
-                        } while (mastermind.getReplay() == 0);
+                                    logger.warn(String.format("replay = %s",game.getReplay()));
+                        } while (game.getReplay() == 0);
                         break;
                     default:
                 }
-            mastermind.setMainMenu(JOptionPane.showOptionDialog(null, "MAIN MENU ?", "MASTERMIND",
+            game.setMainMenu(JOptionPane.showOptionDialog(null, "MAIN MENU ?", "MASTERMIND",
                 JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_02, options, options[0]));
-                    logger.warn(String.format("main menu = %s",mastermind.getMainMenu()));
-        }while (mastermind.getMainMenu() == 0);
+                    logger.warn(String.format("main menu = %s",game.getMainMenu()));
+        }while (game.getMainMenu() == 0);
             JOptionPane.showMessageDialog(null, "", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_03);
     }
 }

@@ -8,6 +8,8 @@ import java.util.Properties;
 
 public class Game extends Mastermind {
 
+    public Game () {}
+
     /**
      * Switch between the game and the developer mode.
      * @param args
@@ -110,7 +112,7 @@ public class Game extends Mastermind {
      * allows to know the number of chance remaining in the sentence.
      * @return input of user.
      */
-    public String showRresult (int menu,int mode,int chance) throws IOException {
+    public String showRresult (int menu,int mode,int chance,int numberCase) throws IOException {
 
         Properties p = new Properties();
         InputStream is = new FileInputStream("src/com/resources/Config.properties");
@@ -119,6 +121,7 @@ public class Game extends Mastermind {
         this.menu = menu;
         this.mode = mode;
         this.chance = chance;
+        this.numberCase = numberCase;
 
         String previousNumber;
 
@@ -155,6 +158,88 @@ public class Game extends Mastermind {
         return this.playerNumber;
     }
 
+    /**
+     * Defines the game interactivity.
+     * @param mode
+     * @param parameter1
+     * allows to defines the interactivity.
+     * @param parameter2
+     * allows to defines the interactivity.
+     * @param name
+     * allows to defines the interactivity.
+     */
+    public void dialogue (int mode, String parameter1, String parameter2, String name) {
+
+        this.mode = mode;
+        this.parameter1 = parameter1;
+        this.parameter2 = parameter2;
+        this.name = name;
+
+        logger.info(String.format("game choice = %s",this.mode));
+        logger.info(String.format("username = %s",this.name));
+
+        ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/pain_brainy.jpg");
+        ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/happy_brainy.jpg");
+        ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/wrong_answer_brainy.jpg");
+        ImageIcon icon_04 = new ImageIcon("src/com/resources/picture/mr_cpu_pain.jpg");
+        ImageIcon icon_05 = new ImageIcon("src/com/resources/picture/mr_cpu_happy.jpg");
+        ImageIcon icon_06 = new ImageIcon("src/com/resources/picture/mr_cpu_wrong_answer.jpg");
+
+        switch (this.mode){
+
+            case 0 :
+                if (this.parameter1.equals(this.parameter2)) {
+                    JOptionPane.showMessageDialog(null, "BRAINY: CONGRATULATION "+this.name.toUpperCase()+
+                            " , YOU WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                    Integer.toString(this.chance = -1);
+                } else if (this.chance == 0) {
+                    JOptionPane.showMessageDialog(null, "BRAINY: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+
+                            this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_02);
+                    Integer.toString(this.chance = -1);
+                }else {
+                    JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND",
+                            JOptionPane.INFORMATION_MESSAGE,icon_03);
+                    this.chance--;
+                }
+                logger.warn(String.format("chance = %s",this.chance));
+                break;
+
+            case 1 :
+                if (this.parameter1.equals(this.parameter2)) {
+                    JOptionPane.showMessageDialog(null, "BRAINY: YEAH !!! I WIN !\n","MASTERMIND",
+                            JOptionPane.INFORMATION_MESSAGE,icon_02);
+                    Integer.toString(this.chance = -1);
+                } else if (this.chance == 0) {
+                    JOptionPane.showMessageDialog(null, "BRAINY: I DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+
+                            this.parameter2+"\nYOU WIN\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_01);
+                    Integer.toString(this.chance = -1);
+                }else {
+                    JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND",
+                            JOptionPane.INFORMATION_MESSAGE,icon_03);
+                    this.chance--;
+                }
+                logger.warn(String.format("chance = %s",this.chance));
+                break;
+
+            case 2 :
+                if (this.parameter1.equals(this.parameter2)) {
+                    JOptionPane.showMessageDialog(null, "CPU: CONGRATULATION "+this.name.toUpperCase()+
+                            " WIN !\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_04);
+                    Integer.toString(this.chance = -1);
+                } else if (this.chance == 0) {
+                    JOptionPane.showMessageDialog(null, "CPU: YOU DON'T HAVE TRIES ANYMORE\nPADLOCK WAS: "+
+                            this.parameter2+"\nYOU LOOSE\n","MASTERMIND", JOptionPane.INFORMATION_MESSAGE,icon_05);
+                    Integer.toString(this.chance = -1);
+                }else {
+                    JOptionPane.showMessageDialog(null, "WRONG ANSWER","MASTERMIND",
+                            JOptionPane.INFORMATION_MESSAGE,icon_06);
+                    this.chance--;
+                }
+                logger.warn(String.format("chance = %s",this.chance));
+                break;
+        }
+    }
+
     public String getName() { return this.name; }
 
     /**
@@ -168,6 +253,7 @@ public class Game extends Mastermind {
      */
     public void setName(String name) throws IOException {
 
+        this.name = name;
         Properties p = new Properties();
         InputStream is = new FileInputStream("src/com/resources/Config.properties");
         p.load(is);
@@ -183,24 +269,6 @@ public class Game extends Mastermind {
         } while (this.name.length() < Integer.parseInt(p.getProperty("limitNameMini")) || this.name.length() > Integer.parseInt(p.getProperty("limitNameMaxi")));
     }
 
-    public Boolean getSystemMode() {
-        return this.systemMode;
-    }
 
-    public void setSystemMode(Boolean systemMode) {
-        this.systemMode = systemMode;
-    }
-
-    public int getMode() {
-        return this.mode;
-    }
-
-    public int getMenu() {
-        return this.menu;
-    }
-
-    public String getPlayerNumber() {
-        return this.playerNumber;
-    }
 
 }

@@ -46,19 +46,14 @@ public class Mastermind {
 
     /**
      * System mode. This mode can be modified.
-     * @see Mastermind#systemMode(String[])
-     * @see Getters#getSystemMode()
+     * @see Game#systemMode(String[])
+     * @see Game#getSystemMode()
      */
     protected Boolean systemMode;
 
     /**
-     * Result is true or false. This mode can be modified.
-     */
-    protected Boolean responseIsGood = true;
-
-    /**
      * Menu mode. This menu can be changed.
-     * @see Mastermind#menu()
+     * @see Game#menu()
      * @see Getters#getMenu()
      */
     protected  int menu;
@@ -68,7 +63,7 @@ public class Mastermind {
      * <p>
      *      User chose one of three game.
      * </p>
-     * @see Mastermind#games(int)
+     * @see Game#games(int)
      * @see Getters#getMode()
      */
     protected  int mode;
@@ -239,11 +234,11 @@ public class Mastermind {
      *          setname is configured for respected some rules.
      *          You need to respect the limit mini and limit maxi define in Config.properties to choose a name.
      *     </p>
-     * @see Mastermind#createName()
+     * @see Game#createName()
      * @see Mastermind#showRresult(int, int, int)
      * @see Mastermind#dialogue(int, String, String, String)
-     * @see Getters#getName()
-     * @see Getters#setName(String)
+     * @see Game#getName()
+     * @see Game#setName(String)
      */
     protected String name;
 
@@ -266,21 +261,10 @@ public class Mastermind {
                     this.numberPresent = 0;
      }
 
-    /**
-     * Switch between the game and the developer mode.
-     * @param args
-     *            Value who define the system mode.
-     *            This value is chosen in Jshell otherwise system config.properties is charged.
-     * @return the system mode.
-     */
-    public boolean systemMode(String[] args){
-
-         this.systemMode = false;
-         this.systemMode = Boolean.valueOf(String.valueOf(args[0]));
-         if (args[0].equals("dev")) { this.systemMode = true; }
-            logger.info(String.format("system mode = %s",this.systemMode));
-
-         return this.systemMode;
+    public Mastermind(String name, int chance, String parameter1){
+        this.name = name;
+        this.chance = chance;
+        this.parameter1 = parameter1;
     }
 
     /**
@@ -302,81 +286,6 @@ public class Mastermind {
                     logger.info(String.format("random number = %s",this.randomNumber));
 
         return Integer.toString(randomNumber);
-    }
-
-    /**
-     * Name creation.
-     * @return the username.
-     */
-    public String createName () {
-
-         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/name.jpg");
-            this.name = (String) JOptionPane.showInputDialog(null,"ENTER YOUR NAME","MASTERMIND",
-                JOptionPane.INFORMATION_MESSAGE,icon_01,null,"USER");
-                    logger.info(String.format("username = %s",this.name));
-        return this.name;
-    }
-
-    /**
-     * Game introduction.
-     */
-    public void introduction (){
-
-         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/mastermind_brain.jpg");
-            ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/presentation.jpg");
-         JOptionPane.showMessageDialog(null, null, "MASTERMIND",
-            JOptionPane.INFORMATION_MESSAGE, icon_01);
-         JOptionPane.showMessageDialog
-            (null, "WELCOME TO THE MASTERMIND GAMES\nIT'S YOUR BUDDY BRAINY AND IT'S A PLEASURE TO MEET YOU\n", "MASTERMIND",
-                JOptionPane.INFORMATION_MESSAGE, icon_02);
-    }
-
-    /**
-     * Game menu.
-     *
-     * @return the choose of user.
-     */
-    public int menu () {
-
-         String[] options = {"PUZZLE", "ENIGMA"};
-            ImageIcon icon = new ImageIcon("src/com/resources/picture/mode.jpg");
-                this.menu = JOptionPane.showOptionDialog(null, "", "MASTERMIND",
-                    JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
-                        logger.warn(String.format("menu choice = %s",this.menu));
-         return this.menu;
-    }
-
-    /**
-     * Game mode.
-     * @param menu
-     * @return the choose of user.
-     */
-    public int games (int menu){
-
-         this.menu = menu;
-         String[] options = {"CHALLENGER", "DEFENDER", "DUEL"};
-
-         ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/game.jpg");
-            ImageIcon icon_02 = new ImageIcon("src/com/resources/picture/rule.jpg");
-                ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/mr_cpu_angry.jpg");
-
-         this.mode = JOptionPane.showOptionDialog(null, "", "MASTERMIND",
-             JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, icon_01, options, options[0]);
-
-         switch (this.mode){
-             case 0:
-             JOptionPane.showMessageDialog(null, "CHALLENGER MODE\nFIND MY SECRET COMBINATION\nGOOD LUCK !","MASTERMIND",
-                JOptionPane.INFORMATION_MESSAGE, icon_02);break;
-             case 1:
-             JOptionPane.showMessageDialog(null, "DEFENDER MODE\nI MUST FIND YOU'RE SECRET COMBINATION", "MASTERMIND",
-                JOptionPane.INFORMATION_MESSAGE, icon_02);break;
-             case 2:
-             JOptionPane.showMessageDialog(null, "DUEL MODE\nTURN-BASED\nFIND MY NUMBER\nGOOD LUCK !", "MASTERMIND",
-                JOptionPane.INFORMATION_MESSAGE, icon_03);break;
-         }
-            logger.info(String.format("menu choice = %s",this.menu));
-                logger.warn(String.format("game choice = %s",this.mode));
-        return this.mode;
     }
 
     /**
@@ -620,6 +529,48 @@ public class Mastermind {
                         logger.warn(String.format("reset number well positioned = %s",this.numberWellPositioned));
                             logger.warn(String.format("reset number present = %s",this.numberPresent));
     }
+
+    /**
+     *     A number chosen by the player.
+     *
+     *     <p>
+     *          setPlayerNumber is configured for respected some rules.
+     *          Like insert the good number quantity and insert only numeric characters with condition and regex.
+     *     </p>
+     *
+     * @param playerNumber
+     */
+    public void setPlayerNumber(String playerNumber) throws IOException {
+
+        Properties p = new Properties();
+        InputStream is = new FileInputStream("src/com/resources/Config.properties");
+        p.load(is);
+        ImageIcon icon_01 = new ImageIcon("src/com/resources/picture/invalid_input.jpg");
+
+        boolean regexPlayerNumber = this.playerNumber.matches("^[0-9]+$");
+
+        logger.warn(String.format("player number -> numeric = %s",regexPlayerNumber));
+        do {
+            if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")) || !regexPlayerNumber) {
+                JOptionPane.showMessageDialog(null, "INVALID NUMBER", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
+                logger.error(String.format("typing error for the player's number"));
+                this.showRresult(menu,mode,chance);
+            } else this.playerNumber = playerNumber;
+        } while (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")));
+    }
+    public String getPlayerNumber() { return null; }
+    public String getBrainyNumber() { return this.brainyNumber; }
+    public void setBrainyNumber(String brainyNumber) { this.brainyNumber = brainyNumber; }
+    public String getMrCpuNumber() { return mrCpuNumber; }
+    public void setMrCpuNumber(String mrCpuNumber) { this.mrCpuNumber = mrCpuNumber; }
+    public String getAnswer() { return answer; }
+    public void setAnswer(String answer) { this.answer = answer; }
+    public int getReplay() { return replay; }
+    public void setReplay(int replay) { this.replay = replay; }
+    public int getChance() { return chance; }
+    public int getNumberCase() { return numberCase; }
+    public int getMainMenu() { return mainMenu; }
+    public void setMainMenu(int mainMenu) { this.mainMenu = mainMenu; }
 }
 
 

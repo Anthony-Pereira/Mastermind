@@ -1,4 +1,4 @@
-package com.company;
+package com.game;
 
 import java.io.*;
 import java.util.Properties;

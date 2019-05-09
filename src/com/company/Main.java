@@ -29,6 +29,7 @@ public class Main {
                 ImageIcon icon_03 = new ImageIcon("src/com/resources/picture/good_bye.jpg");
                     ImageIcon icon_04 = new ImageIcon("src/com/resources/picture/your_number_is.jpg");
                         ImageIcon icon_05 = new ImageIcon("src/com/resources/picture/super_brainy.jpg");
+                            ImageIcon icon_06 = new ImageIcon("src/com/resources/picture/stunned_brainy.jpg");
 
         String[] options = {"YES", "NO"};
 
@@ -77,6 +78,7 @@ public class Main {
                     case 1:
                         do {
                             logger.warn(String.format("system mode = %s",game.getSystemMode()));
+                            player.reset();
                                 brainy.reset();
                                     brainy.setBrainyNumber(brainy.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                                         logger.warn(String.format("Brainy number = %s", brainy.getBrainyNumber()));
@@ -90,7 +92,10 @@ public class Main {
                                 }
                                 if (brainy.getChance() != 0){
                                     JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
-                                        p.getProperty("numberCase")+"\nCHANCE: "+brainy.getChance()+"\nBRAINY: YOUR NUMBER IS "+
+                                            p.getProperty("numberCase")+"\nCHANCE: "+brainy.getChance()+"\nTIPS: "+
+                                            brainy.getArrayClue(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_06);
+                                    JOptionPane.showMessageDialog(null, "DIFFICULTY: "+
+                                            p.getProperty("numberCase")+"\nCHANCE: "+brainy.getChance()+"\nBRAINY: YOUR NUMBER IS "+
                                             brainy.getBrainyNumber(),"MASTERMIND",JOptionPane.INFORMATION_MESSAGE,icon_04);
                                 }
                                     brainy.dialogue(game.getMode(), brainy.getBrainyNumber(), player.getPlayerNumber(), game.getName());

@@ -299,7 +299,5 @@ public class Game extends Mastermind {
         } while (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")));
     }
     public String getPlayerNumber() { return this.playerNumber; }
-
-
-
+    public String getArrayClue() { return arrayClue; }
 }

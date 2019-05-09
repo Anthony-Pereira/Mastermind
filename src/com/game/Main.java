@@ -70,7 +70,7 @@ public class Main {
                                             brainy.getAnswer(), "MASTERMIND (DEVELOPER MODE)", JOptionPane.INFORMATION_MESSAGE, icon_05);
                                 }
                                 if (player.getChance() != 0){
-                                        player.setPlayerNumber(player.showRresult(game.getMenu(),game.getMode(),player.getChance(),game.getNumberCase()));
+                                        player.setPlayerNumber(player.showResult(game.getMenu(),game.getMode(),player.getChance(),game.getNumberCase()));
                                 }
                                 player.dialogue(game.getMode(),player.getPlayerNumber(), brainy.getBrainyNumber(), player.getName());
                                     player.logic(game.getMode(), game.getNumberCase(),player.getPlayerNumber(), brainy.getBrainyNumber());
@@ -89,7 +89,7 @@ public class Main {
                                 brainy.reset();
                                     brainy.setBrainyNumber(brainy.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                                         logger.warn(String.format("Brainy number = %s", brainy.getBrainyNumber()));
-                                            player.setPlayerNumber(player.showRresult(game.getMenu(), game.getMode(), brainy.getChance(),game.getNumberCase()));
+                                            player.setPlayerNumber(player.showResult(game.getMenu(), game.getMode(), brainy.getChance(),game.getNumberCase()));
                                                 logger.warn(String.format("player number = %s", player.getPlayerNumber()));
                                                     player.setAnswer(player.getPlayerNumber());
                             do {
@@ -133,7 +133,7 @@ public class Main {
                                             (null, "ANSWER: " + game.getAnswer(), "MASTERMIND (DEVELOPER MODE)",
                                                 JOptionPane.INFORMATION_MESSAGE, icon_05);
                                     if (player.getChance() != 0)
-                                            player.setPlayerNumber(player.showRresult(game.getMenu(), game.getMode(), player.getChance(),game.getNumberCase()));
+                                            player.setPlayerNumber(player.showResult(game.getMenu(), game.getMode(), player.getChance(),game.getNumberCase()));
                                                 player.dialogue(game.getMode(), player.getPlayerNumber(), game.getMrCpuNumber(), player.getName());
                                                     player.logic(game.getMode(), game.getNumberCase(), player.getPlayerNumber(), game.getMrCpuNumber());
                                     if (player.getChance() != -1) {break;}

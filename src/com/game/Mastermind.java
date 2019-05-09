@@ -91,7 +91,7 @@ public class Mastermind {
      * <p>
      *    Defined in the Config.properties file.
      * </p>
-     * @see Game#showRresult(int, int, int, int)
+     * @see Game#showResult(int, int, int, int)
      * @see Game#dialogue(int, String, String, String)
      * @see Mastermind#reset()
      * @see Mastermind#getChance()
@@ -104,7 +104,7 @@ public class Mastermind {
      *      Defined in the Config.properties file.
      * </p>
      * @see Mastermind#randomNumber(int)
-     * @see Game#showRresult(int, int, int, int)
+     * @see Game#showResult(int, int, int, int)
      * @see Mastermind#reset()
      * @see Mastermind#getNumberCase()
      */
@@ -138,7 +138,7 @@ public class Mastermind {
 
     /**
      * A clue who help the user to know how many number are present to the proposition.
-     * @see Game#showRresult(int, int, int, int)
+     * @see Game#showResult(int, int, int, int)
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      */
@@ -146,7 +146,7 @@ public class Mastermind {
 
     /**
      * A clue who help the user to know how many number are well positioned to the proposition.
-     * @see Game#showRresult(int, int, int, int)
+     * @see Game#showResult(int, int, int, int)
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      */
@@ -220,7 +220,7 @@ public class Mastermind {
      *          else if number is inferior, our number will decrease of -1
      *          If the number is equal, it will stay the same.
      *     </p>
-     * @see Game#showRresult(int, int, int, int)
+     * @see Game#showResult(int, int, int, int)
      * @see Mastermind#logic(int, int, String, String)
      * @see Mastermind#reset()
      * @see Mastermind#getMrCpuNumber() ()
@@ -235,7 +235,7 @@ public class Mastermind {
      *          You need to respect the limit mini and limit maxi define in Config.properties to choose a name.
      *     </p>
      * @see Game#createName()
-     * @see Game#showRresult(int, int, int, int)
+     * @see Game#showResult(int, int, int, int)
      * @see Game#dialogue(int, String, String, String)
      * @see Game#getName()
      * @see Game#setName(String)

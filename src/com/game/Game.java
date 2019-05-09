@@ -120,7 +120,7 @@ public class Game extends Mastermind {
      * allows to know the number of chance remaining in the sentence.
      * @return input of user.
      */
-    public String showRresult (int menu,int mode,int chance,int numberCase) throws IOException {
+    public String showResult(int menu, int mode, int chance, int numberCase) throws IOException {
 
         Properties p = new Properties();
         InputStream is = new FileInputStream("src/com/resources/Config.properties");
@@ -302,7 +302,7 @@ public class Game extends Mastermind {
             if (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")) || !regexPlayerNumber) {
                 JOptionPane.showMessageDialog(null, "INVALID NUMBER", "MASTERMIND", JOptionPane.INFORMATION_MESSAGE, icon_01);
                 logger.error(String.format("typing error for the player's number"));
-                this.showRresult(this.menu,this.mode,this.chance,this.numberCase);
+                this.showResult(this.menu,this.mode,this.chance,this.numberCase);
             } else this.playerNumber = playerNumber;
         } while (this.playerNumber.length() < Integer.parseInt(p.getProperty("numberCase")) || this.playerNumber.length() > Integer.parseInt(p.getProperty("numberCase")));
     }

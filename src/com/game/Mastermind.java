@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * <b>Mastermind is the Class representing the Mastermind Game.</b>
+ * <b>The Mastermind Class represent the logic of the game</b>
  * <p>
  * this game is characterized by the following information:
  * <ul>

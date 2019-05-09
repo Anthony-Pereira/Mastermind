@@ -6,6 +6,13 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+* <b>the Main Class launches the game execution</b>
+* @see Mastermind
+* @see Game
+* @author Anthony Pereira
+* @version %I%, %G%
+*/
 public class Main {
 
     static final Logger logger = LogManager.getLogger(Main.class);

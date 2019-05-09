@@ -6,6 +6,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+
+/**
+ * <b>The Game Class represent the interactions of the game.</b>
+ * @see Mastermind
+ * @see Game
+ * @author Anthony Pereira
+ * @version %I%, %G%
+ */
 public class Game extends Mastermind {
 
     public Game () {}

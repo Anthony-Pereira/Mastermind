@@ -414,6 +414,8 @@ public class Mastermind {
     public void setSystemMode(Boolean systemMode) { this.systemMode = systemMode; }
     public int getMode() { return this.mode; }
     public int getMenu() { return this.menu; }
+    public String getArrayClue() { return arrayClue; }
+    public void setArrayClue(String arrayClue) { this.arrayClue = arrayClue; }
 }
 
 

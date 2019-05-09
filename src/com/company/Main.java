@@ -80,7 +80,7 @@ public class Main {
                                 brainy.reset();
                                     brainy.setBrainyNumber(brainy.randomNumber(Integer.parseInt(p.getProperty("numberCase"))));
                                         logger.warn(String.format("Brainy number = %s", brainy.getBrainyNumber()));
-                                            player.setPlayerNumber(brainy.showRresult(game.getMenu(), game.getMode(), brainy.getChance(),game.getNumberCase()));
+                                            player.setPlayerNumber(player.showRresult(game.getMenu(), game.getMode(), brainy.getChance(),game.getNumberCase()));
                                                 logger.warn(String.format("player number = %s", player.getPlayerNumber()));
                                                     player.setAnswer(player.getPlayerNumber());
                             do {
